@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"ruoxijun.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="Python 进阶 File(文件)： 打开文件：参 1 文件路径名，参 2 文件打开模式，参 3 编码格式(默认 win 上 gbk) f &#x3D; open(&quot;E:&#x2F;test&#x2F;qq.html&quot;, &quot;r&quot;, encoding&#x3D;&#39;utf-8&#39;)   关闭文件 ： f.close()  模式：   模式 功能    r 只读，指针指向开头   w">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python 进阶">
+<meta property="og:url" content="https://ruoxijun.github.io/2020/11/13/blog/python/basispro/index.html">
+<meta property="og:site_name" content="若惜君">
+<meta property="og:description" content="Python 进阶 File(文件)： 打开文件：参 1 文件路径名，参 2 文件打开模式，参 3 编码格式(默认 win 上 gbk) f &#x3D; open(&quot;E:&#x2F;test&#x2F;qq.html&quot;, &quot;r&quot;, encoding&#x3D;&#39;utf-8&#39;)   关闭文件 ： f.close()  模式：   模式 功能    r 只读，指针指向开头   w">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-11-13T06:33:01.949Z">
+<meta property="article:modified_time" content="2020-11-13T06:53:35.543Z">
+<meta property="article:author" content="ruoxijun">
+<meta property="article:tag" content="面向对象">
+<meta property="article:tag" content="python">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://ruoxijun.github.io/2020/11/13/blog/python/basispro/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Python 进阶 | 若惜君</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+   <script type="text/javascript" src="/js/my_js/clicklove.js"></script>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+    <!-- github头像 -->
+    <a target="_blank" rel="noopener" href="https://github.com/ruoxijun" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#64CEAA; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">若惜君</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://ruoxijun.github.io/2020/11/13/blog/python/basispro/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/img.jpg">
+      <meta itemprop="name" content="ruoxijun">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="若惜君">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Python 进阶
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-11-13 14:33:01 / 修改时间：14:53:35" itemprop="dateCreated datePublished" datetime="2020-11-13T14:33:01+08:00">2020-11-13</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/python/" itemprop="url" rel="index"><span itemprop="name">python</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <blockquote>
+<h2 id="Python-进阶"><a href="#Python-进阶" class="headerlink" title="Python 进阶"></a>Python 进阶</h2></blockquote>
+<h3 id="File-文件-："><a href="#File-文件-：" class="headerlink" title="File(文件)："></a>File(文件)：</h3><ul>
+<li>打开文件：参 1 文件路径名，参 2 文件打开模式，参 3 编码格式(默认 win 上 gbk)<ul>
+<li><code>f = open(&quot;E:/test/qq.html&quot;, &quot;r&quot;, encoding=&#39;utf-8&#39;)</code></li>
+</ul>
+</li>
+<li>关闭文件 ： <code>f.close()</code></li>
+</ul>
+<h4 id="模式："><a href="#模式：" class="headerlink" title="模式："></a>模式：</h4><table>
+<thead>
+<tr>
+<th>模式</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>r</strong></td>
+<td>只读，指针指向开头</td>
+</tr>
+<tr>
+<td><strong>w</strong></td>
+<td>只写，指针指向开头。文件不存在将创建文件</td>
+</tr>
+<tr>
+<td><strong>a</strong></td>
+<td>追加，指针指向结尾。文件不存在创建新文件</td>
+</tr>
+<tr>
+<td>可附加模式</td>
+<td>“+”：用于读写，”b”：以二进制打开文件</td>
+</tr>
+</tbody></table>
+<h4 id="常用方法："><a href="#常用方法：" class="headerlink" title="常用方法："></a>常用方法：</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">f = open(<span class="string">&quot;E:/test/str.txt&quot;</span>,<span class="string">&quot;r&quot;</span>,encoding=<span class="string">&#x27;utf-8&#x27;</span>) <span class="comment"># 1文件路径名 2文件打开模式 3编码格式</span></span><br><span class="line">print(f.closed,f.name,f.mode) <span class="comment"># 文件是否关闭，文件名，模式</span></span><br><span class="line"></span><br><span class="line">print(f.read()) <span class="comment"># 传入int参数从文件读取指定的字节数，如果未给定或为负则读取所有</span></span><br><span class="line">print(f.readline()) <span class="comment"># 读取整行，包括&quot;\n&quot;字符(也可传入int指定字节数)</span></span><br><span class="line">print(f.readlines()) <span class="comment"># 读取所有行(直到结束符EOF)并返回列表</span></span><br><span class="line"></span><br><span class="line">f.write(str) <span class="comment"># 将字符串写入文件，返回的是写入的字符长度</span></span><br><span class="line">f.writelines([<span class="string">&#x27;第一行\n&#x27;</span>,<span class="string">&#x27;第二行&#x27;</span>]) <span class="comment"># 写入序列字符串列表，换行需要自己加入每行的换行符</span></span><br><span class="line"></span><br><span class="line">f.tell() <span class="comment"># 返回文件当前指针位置</span></span><br><span class="line"><span class="comment"># seek参1：移动的字节数，是负数表示从倒数第几位开始</span></span><br><span class="line"><span class="comment"># seek参2：0(默认) 从文件头，1 从当前位置，2 从文件末尾</span></span><br><span class="line">f.seek() <span class="comment"># 移动指针，成功返回新位置，失败返回-1</span></span><br><span class="line"><span class="comment"># truncate：从文件首字节开始截断，截断文件为参1个字节，无参表示从当前位置截断</span></span><br><span class="line"><span class="comment"># 必须在能写模式下，`r` 下模式建议使用 `r+`</span></span><br><span class="line"><span class="comment"># 读取模式下截断后不能继续读取，否则数据将不会被删除</span></span><br><span class="line">f.truncate() <span class="comment"># 截断数据，其它数据将被删除</span></span><br><span class="line"></span><br><span class="line">f.flush() <span class="comment"># 刷新文件内部缓冲，直接把内部缓冲区的数据立刻写入文件</span></span><br><span class="line">f.close() <span class="comment"># 关闭文件</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="OS-模块："><a href="#OS-模块：" class="headerlink" title="OS 模块："></a>OS 模块：</h4><p>python 提供了 <code>OS</code> 模块可以应对不同的操作系统，对文件做更多的操作。通过 <code>import os</code> ：导入 OS 模块</p>
+<p>常用方法：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os <span class="comment"># 导入模块</span></span><br><span class="line"></span><br><span class="line">print(os.sep) <span class="comment"># 系统路径分隔符</span></span><br><span class="line">print(os.linesep) <span class="comment"># 系统行终止符</span></span><br><span class="line">print(os.name) <span class="comment"># 工作平台:Windows=&#x27;nt&#x27;，Linux/Unix=&#x27;posix&#x27;</span></span><br><span class="line">print(os.curdir) <span class="comment"># 当前目录：&quot;.&quot;</span></span><br><span class="line">print(os.getcwd()) <span class="comment"># 当前工作目录</span></span><br><span class="line">os.chdir(<span class="string">&quot;e:&quot;</span>+ os.sep) <span class="comment"># 改变当前工作目录</span></span><br><span class="line">os.system(<span class="string">&#x27;cmd&#x27;</span>) <span class="comment"># 运行shell命令</span></span><br><span class="line">print(os.stat(<span class="string">r&#x27;E:\test\test.txt&#x27;</span>)) <span class="comment"># 获得文件属性</span></span><br><span class="line"></span><br><span class="line">print(os.listdir()) <span class="comment"># 返回目录下文件和文件夹名的列表(可传入路径字符串指定目录)</span></span><br><span class="line">os.mkdir(<span class="string">&#x27;e:/a&#x27;</span>) <span class="comment"># 创建一个文件夹，路径错误会文件夹已存在将报错</span></span><br><span class="line">os.makedirs(<span class="string">&#x27;e:/a/b/c/d&#x27;</span>) <span class="comment"># 创建多级目录，目录所有目录已存在将报错</span></span><br><span class="line">os.rmdir(<span class="string">&#x27;e:/a/b/c/d&#x27;</span>) <span class="comment"># 删除一个空文件夹，非空或不存在会报错</span></span><br><span class="line">os.removedirs(<span class="string">&#x27;e:/a/b/c&#x27;</span>) <span class="comment"># 删除目录</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="OS-下的-path-模块："><a href="#OS-下的-path-模块：" class="headerlink" title="OS 下的 path 模块："></a>OS 下的 path 模块：</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line">file = <span class="string">&quot;e:/test/test.txt&quot;</span></span><br><span class="line"></span><br><span class="line">os.path.abspath(<span class="string">&quot;.&quot;</span>) <span class="comment"># 返回指定路径的绝对路径</span></span><br><span class="line">os.path.basename(<span class="string">&quot;.&quot;</span>) <span class="comment"># 返回文件名</span></span><br><span class="line">os.path.dirname(file) <span class="comment"># 传入路径的路径名(去除文件名)</span></span><br><span class="line">os.path.split(file) <span class="comment"># 分割文件和路径名组成元组</span></span><br><span class="line">os.path.splitext(file) <span class="comment"># 分割路径文件名和文件扩展名</span></span><br><span class="line">os.path.join(<span class="string">&quot;e:\\&quot;</span>,<span class="string">&quot;test&quot;</span>,<span class="string">&quot;test.txt&quot;</span>) <span class="comment"># 组合路径名(cde等主盘路径不会加反斜杠)</span></span><br><span class="line"></span><br><span class="line">os.path.getatime(file) <span class="comment"># 最近访问时间</span></span><br><span class="line">os.path.getctime(file) <span class="comment"># 创建时间</span></span><br><span class="line">os.path.getmtime(file) <span class="comment"># 最近修改时间(可time.gmtime(tiem)查看时间)</span></span><br><span class="line">os.path.getsize(file) <span class="comment"># 文件大小(字节)，文件不存在报错</span></span><br><span class="line">os.path.exists(file) <span class="comment"># 查看路径是否损坏</span></span><br><span class="line"></span><br><span class="line">os.path.isabs(file) <span class="comment"># 是否为绝对路径</span></span><br><span class="line">os.path.isdir(file) <span class="comment"># 是否为目录</span></span><br><span class="line">os.path.isfile(file) <span class="comment"># 是否为文件</span></span><br><span class="line">os.path.islink(file) <span class="comment"># 是否为连接</span></span><br><span class="line">os.path.ismount(file) <span class="comment"># 是否为挂载点(如&#x27;c:&#x27;)</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="错误和异常："><a href="#错误和异常：" class="headerlink" title="错误和异常："></a>错误和异常：</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    <span class="comment"># 语句执行区域</span></span><br><span class="line">    <span class="keyword">raise</span> Exception <span class="comment"># 抛出一个异常</span></span><br><span class="line"><span class="keyword">except</span>:</span><br><span class="line">    print(<span class="string">&quot;except&quot;</span>) <span class="comment"># 异常发生语句执行区</span></span><br><span class="line">    <span class="keyword">raise</span> <span class="comment"># 不想或无法处理的异常继续抛出</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    print(<span class="string">&quot;else&quot;</span>) <span class="comment"># 无异常语句执行区</span></span><br><span class="line"><span class="keyword">finally</span>:</span><br><span class="line">    print(<span class="string">&quot;finally&quot;</span>) <span class="comment"># 必执行语句区</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>一些对象定义了标准的清理行为，无论系统是否成功的使用了它，一旦不需要它了，那么这个标准的清理行为就会执行。<br>如打开一个文件对象：</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># with 关键字无论文件是否打开成功，不再使用后都会关闭</span></span><br><span class="line"><span class="keyword">with</span> open(<span class="string">&quot;myfile.txt&quot;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    <span class="keyword">for</span> line <span class="keyword">in</span> f:</span><br><span class="line">        print(line, end=<span class="string">&quot;&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>自定义异常类：</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyError</span>(<span class="params">Exception</span>):</span> <span class="comment"># 继承 Exception 异常类</span></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, value</span>):</span></span><br><span class="line">            self.value = value</span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">__str__</span>(<span class="params">self</span>):</span></span><br><span class="line">            <span class="keyword">return</span> repr(self.value)</span><br><span class="line"></span><br><span class="line"><span class="keyword">raise</span> MyError(<span class="string">&quot;my define error&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="Class-与面向对象："><a href="#Class-与面向对象：" class="headerlink" title="Class 与面向对象："></a>Class 与面向对象：</h3><ul>
+<li>类常识：</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Class</span>(<span class="params">object</span>):</span> <span class="comment"># 括号内表示继承类，多继承可逗号隔开</span></span><br><span class="line">    name=<span class="string">&#x27;&#x27;</span> <span class="comment"># 定义类元素</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self,name</span>):</span> <span class="comment"># 构造函数</span></span><br><span class="line">        Class.name=<span class="string">&quot;hi&quot;</span> <span class="comment"># 定义或对类元素赋值</span></span><br><span class="line">        self.name=name <span class="comment"># 对实例元素name赋值</span></span><br><span class="line">        self.age=<span class="number">10</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">show</span>(<span class="params">self</span>):</span> <span class="comment"># self 表示当前实例对象类似(this)</span></span><br><span class="line">        print(<span class="string">&#x27;name=&#x27;</span>,self.name,<span class="string">&#x27;,age=&#x27;</span>,self.age)</span><br><span class="line"></span><br><span class="line">c=Class(<span class="string">&#x27;world&#x27;</span>) <span class="comment"># 创建实例对象</span></span><br><span class="line">c.show() <span class="comment"># 调用方法</span></span><br><span class="line">Class.name=<span class="string">&quot;Class&quot;</span> <span class="comment"># 创建或改变类属性值</span></span><br><span class="line">c.name=<span class="string">&quot;self&quot;</span> <span class="comment"># 创建或改变实例属性值</span></span><br><span class="line">print(Class.name) <span class="comment"># 访问类属性(实例属性同理)</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>类继承：</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Class2</span>(<span class="params">Class</span>):</span> <span class="comment"># 继承上 Class 类</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self,name</span>):</span> <span class="comment"># 子类构造方法也会覆盖父类构造方法，需要自行调用父类构造方法</span></span><br><span class="line">        super().__init__(name) <span class="comment"># 调用父类构造方法(调用父类其它方法同理)</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">show</span>(<span class="params">self</span>):</span> <span class="comment"># 重写父类方法</span></span><br><span class="line">        print(self.name)</span><br><span class="line"></span><br><span class="line">c2=Class2(<span class="string">&quot;Class2&quot;</span>)</span><br><span class="line">c2.show()</span><br><span class="line"><span class="comment"># c2.show=&#x27;a&#x27; # 定义属性与方法名同时属性将覆盖方法，调用方法将报错</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>类常用方法：</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">issubclass(Class2,Class) <span class="comment"># 参1(类)是否为参2(类)的子类</span></span><br><span class="line">isinstance(c,Class) <span class="comment"># 参1(实例)是否为参2(类)的实例</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 对类或实例的属性操作方法</span></span><br><span class="line">hasattr(Class,<span class="string">&quot;name&quot;</span>) <span class="comment"># 参1(类)是否存在参2属性</span></span><br><span class="line">hasattr(c,<span class="string">&quot;name&quot;</span>) <span class="comment"># 实例同理</span></span><br><span class="line">getattr(Class,<span class="string">&quot;name&quot;</span>) <span class="comment"># 获取某属性</span></span><br><span class="line">setattr(Class,<span class="string">&quot;name&quot;</span>,<span class="string">&quot;value&quot;</span>) <span class="comment"># 添加或设置某属性值</span></span><br><span class="line">delattr(Class,<span class="string">&quot;name&quot;</span>) <span class="comment"># 删除某属性(还可使用del关键字)</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>特殊方法：</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Test</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self</span>):</span> <span class="comment"># 初始化</span></span><br><span class="line">        self.num=<span class="number">1</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__str__</span>(<span class="params">self</span>):</span> <span class="comment"># 类似tostring方法</span></span><br><span class="line">        <span class="keyword">return</span> str(self.num)</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__del__</span>(<span class="params">self</span>):</span> <span class="comment"># 实例被删除(del)时调用</span></span><br><span class="line">        print(<span class="string">&quot;实例被del&quot;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">getnum</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="keyword">return</span> self.num</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">setnum</span>(<span class="params">self,num</span>):</span></span><br><span class="line">        self.num=num</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">delnum</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="keyword">del</span> self.num</span><br><span class="line">    x=property(getnum,setnum,delnum) <span class="comment"># 对该属性的操作将调用不同的方法</span></span><br><span class="line"></span><br><span class="line">test=Test()</span><br><span class="line">print(test) <span class="comment"># 调用tostring方法</span></span><br><span class="line"></span><br><span class="line">print(test.x) <span class="comment"># 调用get方法</span></span><br><span class="line">test.x=<span class="number">30</span> <span class="comment"># 调用set方法</span></span><br><span class="line">print(test)</span><br><span class="line"><span class="keyword">del</span> test.x <span class="comment"># 调用del方法</span></span><br><span class="line"><span class="keyword">del</span> test</span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+    
+    
+
+    <div>
+    
+      <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+    
+    </div>
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" rel="tag"><i class="fa fa-tag"></i> 面向对象</a>
+              <a href="/tags/python/" rel="tag"><i class="fa fa-tag"></i> python</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/11/13/blog/python/basis/" rel="prev" title="python 基础">
+      <i class="fa fa-chevron-left"></i> python 基础
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/11/13/index/" rel="next" title="网站公告">
+      网站公告 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Python-%E8%BF%9B%E9%98%B6"><span class="nav-text">Python 进阶</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#File-%E6%96%87%E4%BB%B6-%EF%BC%9A"><span class="nav-text">File(文件)：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A8%A1%E5%BC%8F%EF%BC%9A"><span class="nav-text">模式：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95%EF%BC%9A"><span class="nav-text">常用方法：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#OS-%E6%A8%A1%E5%9D%97%EF%BC%9A"><span class="nav-text">OS 模块：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#OS-%E4%B8%8B%E7%9A%84-path-%E6%A8%A1%E5%9D%97%EF%BC%9A"><span class="nav-text">OS 下的 path 模块：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%94%99%E8%AF%AF%E5%92%8C%E5%BC%82%E5%B8%B8%EF%BC%9A"><span class="nav-text">错误和异常：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Class-%E4%B8%8E%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%EF%BC%9A"><span class="nav-text">Class 与面向对象：</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="ruoxijun"
+      src="/images/img.jpg">
+  <p class="site-author-name" itemprop="name">ruoxijun</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">35</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">77</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/ruoxijun" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;ruoxijun" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/1460662245@qq.com" title="E-Mail → 1460662245@qq.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="http://baidu.com/" title="http:&#x2F;&#x2F;baidu.com" rel="noopener" target="_blank">百度</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    
+<script type="text/javascript" charset="utf-8" src="/js/tagcloud.js"></script>
+<script type="text/javascript" charset="utf-8" src="/js/tagcanvas.js"></script>
+<div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div id="myCanvasContainer" class="widget tagcloud">
+        <canvas width="250" height="250" id="resCanvas" style="width:100%">
+            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AlertDialog/" rel="tag">AlertDialog</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Collection/" rel="tag">Collection</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Cookie/" rel="tag">Cookie</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/File/" rel="tag">File</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/FileInputStream/" rel="tag">FileInputStream</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/FileOutputStream/" rel="tag">FileOutputStream</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Filter/" rel="tag">Filter</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Fragment/" rel="tag">Fragment</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/" rel="tag">HTML</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HashMap/" rel="tag">HashMap</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HashSet/" rel="tag">HashSet</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/InputStream/" rel="tag">InputStream</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Iterator/" rel="tag">Iterator</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Jackson/" rel="tag">Jackson</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javaweb/" rel="tag">Javaweb</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LOG4j/" rel="tag">LOG4j</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LinkedHashSet/" rel="tag">LinkedHashSet</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LinkedList/" rel="tag">LinkedList</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Lombok/" rel="tag">Lombok</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Maven/" rel="tag">Maven</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/" rel="tag">MySQL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OutputStream/" rel="tag">OutputStream</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PageHelper/" rel="tag">PageHelper</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PopupWindow/" rel="tag">PopupWindow</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ProgressBar/" rel="tag">ProgressBar</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RecyclerView/" rel="tag">RecyclerView</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/" rel="tag">SQL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQLite/" rel="tag">SQLite</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ScrollView/" rel="tag">ScrollView</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SharedPreferences/" rel="tag">SharedPreferences</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TabLayout/" rel="tag">TabLayout</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Thread/" rel="tag">Thread</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Toast/" rel="tag">Toast</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TreeSet/" rel="tag">TreeSet</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ViewPager/" rel="tag">ViewPager</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WebView/" rel="tag">WebView</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ajax/" rel="tag">ajax</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/aop/" rel="tag">aop</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/arraylist/" rel="tag">arraylist</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/axios/" rel="tag">axios</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/fastjson/" rel="tag">fastjson</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/file/" rel="tag">file</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/idea/" rel="tag">idea</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ioc/" rel="tag">ioc</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery/" rel="tag">jQuery</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/" rel="tag">javascript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jdbc/" rel="tag">jdbc</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/json/" rel="tag">json</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jsp/" rel="tag">jsp</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jstl/" rel="tag">jstl</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jvm/" rel="tag">jvm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/list/" rel="tag">list</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lock/" rel="tag">lock</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lombok/" rel="tag">lombok</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/map/" rel="tag">map</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/" rel="tag">markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mybatis/" rel="tag">mybatis</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mybatis-%E7%BC%93%E5%AD%98/" rel="tag">mybatis 缓存</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mybatis%E9%80%86%E5%90%91%E5%B7%A5%E7%A8%8B/" rel="tag">mybatis逆向工程</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/servlet/" rel="tag">servlet</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/session/" rel="tag">session</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/set/" rel="tag">set</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spring/" rel="tag">spring</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/springmvc/" rel="tag">springmvc</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ssm/" rel="tag">ssm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/synchronize/" rel="tag">synchronize</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8A%A8%E6%80%81SQL/" rel="tag">动态SQL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8A%A8%E6%80%81%E5%B7%A5%E5%8E%82/" rel="tag">动态工厂</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A4%9A%E8%A1%A8%E6%9F%A5%E8%AF%A2/" rel="tag">多表查询</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/" rel="tag">工厂模式</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E4%B8%8E%E4%B8%8B%E8%BD%BD/" rel="tag">文件上传与下载</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BF%AD%E4%BB%A3%E5%99%A8/" rel="tag">迭代器</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9B%86%E5%90%88/" rel="tag">集合</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" rel="tag">面向对象</a><span class="tag-list-count">2</span></li></ul>
+        </canvas>
+    </div>
+</div>
+
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ruoxijun</span>
+</div>
+
+<!-- 隐藏广告 -->
+<!--
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+-->
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script color='' opacity='' zIndex='' count='' src="/lib/canvas-nest/canvas-nest-nomobile.min.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
