@@ -188,7 +188,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://ruoxijun.github.io/2020/11/13/blog/java/collection/list/">
+    <link itemprop="mainEntityOfPage" href="https://ruoxijun.github.io/2020/06/02/blog/java/collection/map/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/img.jpg">
@@ -202,7 +202,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/11/13/blog/java/collection/list/" class="post-title-link" itemprop="url">List 集合</a>
+            <a href="/2020/06/02/blog/java/collection/map/" class="post-title-link" itemprop="url">Map 集合</a>
         </h2>
 
         <div class="post-meta">
@@ -211,10 +211,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-11-13 14:33:01 / 修改时间：14:51:51" itemprop="dateCreated datePublished" datetime="2020-11-13T14:33:01+08:00">2020-11-13</time>
+              <time title="创建时间：2020-06-02 14:07:41" itemprop="dateCreated datePublished" datetime="2020-06-02T14:07:41+08:00">2020-06-02</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-11-13 15:20:06" itemprop="dateModified" datetime="2020-11-13T15:20:06+08:00">2020-11-13</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -236,52 +242,21 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="List-集合"><a href="#List-集合" class="headerlink" title="List 集合"></a>List 集合</h3><blockquote>
-<p>List 接口 (有序,带索引,元素可重复)，继承了 Collection 接口继承了它的方法外，它还定义了 list 集合的特性和独有方法，它的元素是 <strong><em>有序带索引且可重复</em></strong> 的，通过索引可以精确操作集合元素。所有对索引操作的方法都存在 <strong><em>角标越界</em></strong> 的错误风险。</p>
-</blockquote>
-<h4 id="List-重载和特有方法一览："><a href="#List-重载和特有方法一览：" class="headerlink" title="List 重载和特有方法一览："></a>List 重载和特有方法一览：</h4><table>
-<thead>
-<tr>
-<th>方法</th>
-<th>效果</th>
-<th>返回值</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>add(int,object)</td>
-<td>指定插入</td>
-<td>void</td>
-</tr>
-<tr>
-<td>set(int,object)</td>
-<td>修改元素</td>
-<td>Object(泛型对象)</td>
-</tr>
-<tr>
-<td>get(int)</td>
-<td>获取元素</td>
-<td>Object(泛型对象)</td>
-</tr>
-<tr>
-<td>indexOf(object)</td>
-<td>查找获取该元素位置</td>
-<td>int</td>
-</tr>
-<tr>
-<td>remove(int)</td>
-<td>删除元素</td>
-<td>被删除元素</td>
-</tr>
-<tr>
-<td>subList(int,int)</td>
-<td>取部分集合，取头不取尾</td>
-<td>List</td>
-</tr>
-</tbody></table>
-<h4 id="List-已实现类和特性："><a href="#List-已实现类和特性：" class="headerlink" title="List 已实现类和特性："></a>List 已实现类和特性：</h4>
+          <h3 id="Map-集合"><a href="#Map-集合" class="headerlink" title="Map 集合"></a>Map 集合</h3><h4 id="Map-已实现类与特性："><a href="#Map-已实现类与特性：" class="headerlink" title="Map 已实现类与特性："></a>Map 已实现类与特性：</h4><ul>
+<li>Hashtable:哈希表结构，且不允许 null 作为键和值，同步(不建议使用)，键唯一性靠 hashCode()和 equals()(在键对象的类中重写方法，可保证键唯一性)<ul>
+<li>Properties(Hashtable 子类):属性集，<strong><em>键与值都是字符串</em></strong>(没有泛型)，都以 object 存储在其中(自身提供了不用强转的方法)，且可以结合 <strong><em>流</em></strong> 进行键值操作</li>
+</ul>
+</li>
+<li>HashMap: :哈希表结构，且允许<strong>null 作为键和值</strong>，不同步<ul>
+<li>LinkedHashMap：HashMap 的子类，元素顺序为存入顺序(有序)</li>
+</ul>
+</li>
+<li>TreeMap:二叉树结构，会对元素根据键排序(排序方法参照 TreeSet)，不同步</li>
+</ul>
+<h4 id="Map-常用方法："><a href="#Map-常用方法：" class="headerlink" title="Map 常用方法："></a>Map 常用方法：</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">Map map = <span class="keyword">new</span> HashMap();</span><br><span class="line">map.clear();<span class="comment">//清空元素</span></span><br><span class="line">map.size();<span class="comment">//获取元素个数</span></span><br><span class="line">map.containsKey(<span class="string">&quot;obj&quot;</span>);<span class="comment">//是否包含某键</span></span><br><span class="line">map.containsValue(<span class="string">&quot;obj&quot;</span>);<span class="comment">//是否包含某值</span></span><br><span class="line">map.isEmpty();<span class="comment">//集合是否为空</span></span><br><span class="line"></span><br><span class="line">map.get(<span class="string">&quot;key&quot;</span>);<span class="comment">//根据键拿值</span></span><br><span class="line">map.put(<span class="string">&quot;key&quot;</span>, <span class="string">&quot;value&quot;</span>);<span class="comment">//添加元素</span></span><br><span class="line"><span class="comment">//键要保持唯一,添加同一键时会覆盖之前的值,且返回之前的值</span></span><br><span class="line">map.put(<span class="string">&quot;key&quot;</span>, <span class="string">&quot;value2&quot;</span>);<span class="comment">//修改key的值</span></span><br><span class="line">map.putAll(map);<span class="comment">//将一个Map中的所有内容添加到此map中</span></span><br><span class="line">map.remove(<span class="string">&quot;key&quot;</span>);<span class="comment">//根据键移除指定元素,返回删除的值</span></span><br><span class="line">map.remove(<span class="string">&quot;key&quot;</span>, <span class="string">&quot;value&quot;</span>);<span class="comment">//根据键与值移除指定元素(必须完全相同),返回Boolean</span></span><br></pre></td></tr></table></figure>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2020/11/13/blog/java/collection/list/#more" rel="contents">
+              <a class="btn" href="/2020/06/02/blog/java/collection/map/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -309,7 +284,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://ruoxijun.github.io/2020/11/13/blog/java/collection/collection/">
+    <link itemprop="mainEntityOfPage" href="https://ruoxijun.github.io/2020/06/02/blog/java/collection/set/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/img.jpg">
@@ -323,7 +298,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/11/13/blog/java/collection/collection/" class="post-title-link" itemprop="url">Collection 集合基类</a>
+            <a href="/2020/06/02/blog/java/collection/set/" class="post-title-link" itemprop="url">Set 集合</a>
         </h2>
 
         <div class="post-meta">
@@ -332,10 +307,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-11-13 14:33:01 / 修改时间：14:51:47" itemprop="dateCreated datePublished" datetime="2020-11-13T14:33:01+08:00">2020-11-13</time>
+              <time title="创建时间：2020-06-02 10:56:29" itemprop="dateCreated datePublished" datetime="2020-06-02T10:56:29+08:00">2020-06-02</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-11-13 15:20:22" itemprop="dateModified" datetime="2020-11-13T15:20:22+08:00">2020-11-13</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -357,52 +338,18 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="初识集合-Collection"><a href="#初识集合-Collection" class="headerlink" title="初识集合 Collection"></a>初识集合 Collection</h3><p>在开始之前我们先看一下<strong>集合的结构图解</strong><br><img src="https://gitee.com/ruoxijun/images/raw/master/java/list.jpg" alt="集合结构图,图片来自网络"></p>
-<blockquote>
-<p>Collection 集合的顶层接口，定义了集合的特性和方法。<br>集合存储的都是对象，集合类都在 java.util 包中。</p>
+          <h3 id="Set-集合"><a href="#Set-集合" class="headerlink" title="Set 集合"></a>Set 集合</h3><blockquote>
+<p>Set 接口 (无序,元素不能重复)，继承了 Collection 接口无特有方法。</p>
 </blockquote>
-<h4 id="Collection-基本方法一览："><a href="#Collection-基本方法一览：" class="headerlink" title="Collection 基本方法一览："></a>Collection 基本方法一览：</h4><table>
-<thead>
-<tr>
-<th>方法</th>
-<th>效果</th>
-<th>返回值</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>add(Object)</td>
-<td>添加(对象)方法</td>
-<td>Boolean</td>
-</tr>
-<tr>
-<td>remove(Object)</td>
-<td>删除方法</td>
-<td>Boolean</td>
-</tr>
-<tr>
-<td>contains(Object)</td>
-<td>是否包含某元素</td>
-<td>Boolean</td>
-</tr>
-<tr>
-<td>isEmpty()</td>
-<td>集合是否为空</td>
-<td>Boolean</td>
-</tr>
-<tr>
-<td>size()</td>
-<td>集合中元素个数</td>
-<td>int</td>
-</tr>
-<tr>
-<td>clear()</td>
-<td>清除集合中所有元素</td>
-<td>void</td>
-</tr>
-</tbody></table>
+<h4 id="Set-已实现类与特性："><a href="#Set-已实现类与特性：" class="headerlink" title="Set 已实现类与特性："></a>Set 已实现类与特性：</h4><ul>
+<li>HashSet：哈希表结构，保证元素唯一性依靠 <code>hashCode()</code> 和 <code>equals()</code> 方法(hash 值相同时再判断 equals,相同将不再存储)，不同步</li>
+<li>TreeSet：是链表结构(指针)，需保证元素唯一性，可排序</li>
+<li>LinkedHashSet：HashSet 的子类，按存入顺序使用</li>
+</ul>
+<h4 id="Set-利用-Iterator-动态移除元素："><a href="#Set-利用-Iterator-动态移除元素：" class="headerlink" title="Set 利用 Iterator 动态移除元素："></a>Set 利用 Iterator 动态移除元素：</h4>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2020/11/13/blog/java/collection/collection/#more" rel="contents">
+              <a class="btn" href="/2020/06/02/blog/java/collection/set/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -430,7 +377,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://ruoxijun.github.io/2020/11/13/blog/java/maven/">
+    <link itemprop="mainEntityOfPage" href="https://ruoxijun.github.io/2020/05/31/blog/android/view/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/img.jpg">
@@ -444,7 +391,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/11/13/blog/java/maven/" class="post-title-link" itemprop="url">Maven 管理项目</a>
+            <a href="/2020/05/31/blog/android/view/" class="post-title-link" itemprop="url">android 杂记</a>
         </h2>
 
         <div class="post-meta">
@@ -453,10 +400,572 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-11-13 14:33:01 / 修改时间：14:53:25" itemprop="dateCreated datePublished" datetime="2020-11-13T14:33:01+08:00">2020-11-13</time>
+              <time title="创建时间：2020-05-31 14:35:57" itemprop="dateCreated datePublished" datetime="2020-05-31T14:35:57+08:00">2020-05-31</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-11-13 15:17:33" itemprop="dateModified" datetime="2020-11-13T15:17:33+08:00">2020-11-13</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/android/" itemprop="url" rel="index"><span itemprop="name">android</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="Toast："><a href="#Toast：" class="headerlink" title="Toast："></a>Toast：</h3><ul>
+<li>普通 Toast</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Toast.makeText(getApplicationContext(), <span class="string">&quot;Toast&quot;</span>, Toast.LENGTH_SHORT).show();</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>自定义定义显示位置</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Toast toast=Toast.makeText(<span class="keyword">this</span>, <span class="string">&quot;居中Toast&quot;</span>, Toast.LENGTH_SHORT);</span><br><span class="line"><span class="comment">//参1显示位置，参2,3分别是xy轴的偏移量</span></span><br><span class="line">toast.setGravity(Gravity.CENTER,<span class="number">0</span>,<span class="number">0</span>);</span><br><span class="line">toast.show();</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/05/31/blog/android/view/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <div>
+    
+    </div>
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://ruoxijun.github.io/2020/05/30/blog/java/JDBC/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/img.jpg">
+      <meta itemprop="name" content="ruoxijun">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="若惜君">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/05/30/blog/java/JDBC/" class="post-title-link" itemprop="url">java jdbc 操作数据库</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-05-30 11:13:03" itemprop="dateCreated datePublished" datetime="2020-05-30T11:13:03+08:00">2020-05-30</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-11-13 15:24:57" itemprop="dateModified" datetime="2020-11-13T15:24:57+08:00">2020-11-13</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index"><span itemprop="name">java</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="深入-JDBC-了解类的反射机制"><a href="#深入-JDBC-了解类的反射机制" class="headerlink" title="深入 JDBC 了解类的反射机制"></a><center>深入 JDBC 了解类的反射机制</center></h3><h3 id="JDBC-基本使用："><a href="#JDBC-基本使用：" class="headerlink" title="JDBC 基本使用："></a>JDBC 基本使用：</h3><blockquote>
+<p>在此我们会使用官方的思维来注册驱动，在后面我们可以利用， <strong><em>类的反射</em></strong> 来实现更简单的驱动注册。</p>
+</blockquote>
+<p>JDBC 一次简单的调用大致分为 5 步：</p>
+<ol>
+<li>加载驱动：</li>
+</ol>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/05/30/blog/java/JDBC/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <div>
+    
+    </div>
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://ruoxijun.github.io/2020/05/25/blog/interest/axios/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/img.jpg">
+      <meta itemprop="name" content="ruoxijun">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="若惜君">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/05/25/blog/interest/axios/" class="post-title-link" itemprop="url">Axios 基础</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-05-25 13:44:27" itemprop="dateCreated datePublished" datetime="2020-05-25T13:44:27+08:00">2020-05-25</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-11-13 15:18:41" itemprop="dateModified" datetime="2020-11-13T15:18:41+08:00">2020-11-13</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/HTML/" itemprop="url" rel="index"><span itemprop="name">HTML</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Axios-简单入门"><a href="#Axios-简单入门" class="headerlink" title="Axios 简单入门"></a><center>Axios 简单入门<center></center></center></h1><blockquote>
+<h3 id="ajax-与-axios"><a href="#ajax-与-axios" class="headerlink" title="ajax 与 axios"></a>ajax 与 axios</h3></blockquote>
+<p>下面是一段 javascript 原生 ajax 发送一个简单的请求：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> ajax=<span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">    ajax.open(<span class="string">&#x27;get&#x27;</span>,<span class="string">&#x27;1.txt&#x27;</span>,<span class="literal">true</span>);</span><br><span class="line">    ajax.send();</span><br><span class="line">    ajax.onreadystatechange=<span class="function">()=&gt;</span>&#123;</span><br><span class="line">        <span class="keyword">let</span> con=ajax.responseText;</span><br><span class="line">        alert(con);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>axios 的简单使用：</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/05/25/blog/interest/axios/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <div>
+    
+    </div>
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://ruoxijun.github.io/2020/05/21/blog/java/javaweb/filter/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/img.jpg">
+      <meta itemprop="name" content="ruoxijun">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="若惜君">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/05/21/blog/java/javaweb/filter/" class="post-title-link" itemprop="url">过滤器和文件上传下载</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-05-21 20:17:51" itemprop="dateCreated datePublished" datetime="2020-05-21T20:17:51+08:00">2020-05-21</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-11-13 15:21:09" itemprop="dateModified" datetime="2020-11-13T15:21:09+08:00">2020-11-13</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Javaweb/" itemprop="url" rel="index"><span itemprop="name">Javaweb</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="Filter-过滤器："><a href="#Filter-过滤器：" class="headerlink" title="Filter 过滤器："></a>Filter 过滤器：</h2><blockquote>
+<p>对在客户端和服务器之间的中间层 <strong>接口</strong>，可对客户请求消息和服务器响应消息做拦截处理。并且 <strong><em>一个 servlet 文件可以添加多个过滤器，一个过滤器也可过滤多个 servlet 文件</em></strong> 都在 xml 文件中配置。</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Filter</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">default</span> <span class="keyword">void</span> <span class="title">init</span><span class="params">(FilterConfig filterConfig)</span> <span class="keyword">throws</span> ServletException </span>&#123;&#125;</span><br><span class="line">    <span class="comment">//关键方法</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">doFilter</span><span class="params">(ServletRequest var1, ServletResponse var2, FilterChain var3)</span> <span class="keyword">throws</span> IOException, ServletException</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">default</span> <span class="keyword">void</span> <span class="title">destroy</span><span class="params">()</span> </span>&#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>源码中可以看出它与 servlet 类似，都有 init 初始化和 destroy 销毁的方法。但这两方法与 servlet 不同的是，它们前面加入了 <strong><em>default</em></strong> 关键字(java8 新特性)。可以看到它们后面有方法体，所以我们可以选择不重写此两方法，只重写过滤的关键方法 <strong><em>doFilter</em></strong> 。且此方法与 servlet 中 <strong><em>service</em></strong> 方法类似，可对请求和响应做操作。</p>
+<ul>
+<li>实例情景模拟：在浏览器中用<strong>post</strong>方式并以 name 为 key 传递一个<strong>中文</strong>的值访问 <code>/servlet</code> 映射如下。</li>
+</ul>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/05/21/blog/java/javaweb/filter/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <div>
+    
+    </div>
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://ruoxijun.github.io/2020/05/19/blog/java/javaweb/jsp/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/img.jpg">
+      <meta itemprop="name" content="ruoxijun">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="若惜君">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/05/19/blog/java/javaweb/jsp/" class="post-title-link" itemprop="url">jsp 基础使用</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-05-19 06:53:44" itemprop="dateCreated datePublished" datetime="2020-05-19T06:53:44+08:00">2020-05-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-11-13 15:21:29" itemprop="dateModified" datetime="2020-11-13T15:21:29+08:00">2020-11-13</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Javaweb/" itemprop="url" rel="index"><span itemprop="name">Javaweb</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="JSP"><a href="#JSP" class="headerlink" title="JSP"></a><center>JSP</center></h1><blockquote>
+<ul>
+<li><p>负责与用户的交互，将最终界面呈现给用户。是 HTML + js + Css + java 的混合文件。</p>
+</li>
+<li><p>JSP 文件最终转换为一个 java 文件，之后编译为 class 文件。java 中将页面整个 <strong><em><code>write</code></em></strong> 输出。本质上是一个 <strong><em><code>servlet</code></em></strong> 。</p>
+</li>
+<li><p>请求常见状态码：404 资源找不到，400 请求类型不匹配，500 java 程序异常</p>
+</li>
+</ul>
+</blockquote>
+<h3 id="JSP-编码问题："><a href="#JSP-编码问题：" class="headerlink" title="JSP 编码问题："></a>JSP 编码问题：</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page contentType=<span class="string">&quot;text/html; charset=utf-8&quot;</span> %&gt;</span><br><span class="line">&lt;%--这里的utf<span class="number">-8</span>是指服务器发送给客服端时的内容编码 --%&gt;</span><br><span class="line"></span><br><span class="line">&lt;%@ page pageEncoding=<span class="string">&quot;utf-8&quot;</span>%&gt;</span><br><span class="line">&lt;%--这里的utf<span class="number">-8</span>是指 .jsp文件本身的内容编码 --%&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="JSP-的-HTML-中嵌入-Java-程序："><a href="#JSP-的-HTML-中嵌入-Java-程序：" class="headerlink" title="JSP 的 HTML 中嵌入 Java 程序："></a>JSP 的 HTML 中嵌入 Java 程序：</h3>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/05/19/blog/java/javaweb/jsp/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <div>
+    
+    </div>
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://ruoxijun.github.io/2020/05/18/blog/java/javaweb/servlet/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/img.jpg">
+      <meta itemprop="name" content="ruoxijun">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="若惜君">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/05/18/blog/java/javaweb/servlet/" class="post-title-link" itemprop="url">servlet</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-05-18 13:17:35" itemprop="dateCreated datePublished" datetime="2020-05-18T13:17:35+08:00">2020-05-18</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-11-13 15:21:49" itemprop="dateModified" datetime="2020-11-13T15:21:49+08:00">2020-11-13</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Javaweb/" itemprop="url" rel="index"><span itemprop="name">Javaweb</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Servlet"><a href="#Servlet" class="headerlink" title="Servlet"></a><center>Servlet</center></h1><h3 id="web基本概念"><a href="#web基本概念" class="headerlink" title="web基本概念:"></a>web基本概念:</h3><ul>
+<li>http：超文本传输协议，是一个简单的请求响应协议，它通常运行在TCP之上。（https：安全的）</li>
+<li>请求方式：get，post，delete，put …</li>
+<li>响应状态码：200请求响应成功，3xx请求重定向，4xx找不到资源，5xx服务器错误</li>
+</ul>
+<h3 id="servlet-接口："><a href="#servlet-接口：" class="headerlink" title="servlet 接口："></a>servlet 接口：</h3><blockquote>
+<p>servlet 是负责服务器和客户端通信的接口需要我们自己写一个类实现它的方法。</p>
+</blockquote>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/05/18/blog/java/javaweb/servlet/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <div>
+    
+    </div>
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://ruoxijun.github.io/2020/05/17/blog/java/maven/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/img.jpg">
+      <meta itemprop="name" content="ruoxijun">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="若惜君">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/05/17/blog/java/maven/" class="post-title-link" itemprop="url">Maven 管理项目</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-05-17 16:24:35" itemprop="dateCreated datePublished" datetime="2020-05-17T16:24:35+08:00">2020-05-17</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-11-13 15:25:11" itemprop="dateModified" datetime="2020-11-13T15:25:11+08:00">2020-11-13</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -491,7 +1000,7 @@
 </blockquote>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2020/11/13/blog/java/maven/#more" rel="contents">
+              <a class="btn" href="/2020/05/17/blog/java/maven/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -519,7 +1028,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://ruoxijun.github.io/2020/11/13/blog/java/JDBC/">
+    <link itemprop="mainEntityOfPage" href="https://ruoxijun.github.io/2020/05/17/blog/android/webview/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/img.jpg">
@@ -533,7 +1042,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/11/13/blog/java/JDBC/" class="post-title-link" itemprop="url">java jdbc 操作数据库</a>
+            <a href="/2020/05/17/blog/android/webview/" class="post-title-link" itemprop="url">WebView 加载网页组件</a>
         </h2>
 
         <div class="post-meta">
@@ -542,17 +1051,23 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-11-13 14:33:01 / 修改时间：14:53:21" itemprop="dateCreated datePublished" datetime="2020-11-13T14:33:01+08:00">2020-11-13</time>
+              <time title="创建时间：2020-05-17 11:49:29" itemprop="dateCreated datePublished" datetime="2020-05-17T11:49:29+08:00">2020-05-17</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-11-13 15:18:10" itemprop="dateModified" datetime="2020-11-13T15:18:10+08:00">2020-11-13</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java/" itemprop="url" rel="index"><span itemprop="name">java</span></a>
+                  <a href="/categories/android/" itemprop="url" rel="index"><span itemprop="name">android</span></a>
                 </span>
             </span>
 
@@ -567,559 +1082,13 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="深入-JDBC-了解类的反射机制"><a href="#深入-JDBC-了解类的反射机制" class="headerlink" title="深入 JDBC 了解类的反射机制"></a><center>深入 JDBC 了解类的反射机制</center></h3><h3 id="JDBC-基本使用："><a href="#JDBC-基本使用：" class="headerlink" title="JDBC 基本使用："></a>JDBC 基本使用：</h3><blockquote>
-<p>在此我们会使用官方的思维来注册驱动，在后面我们可以利用， <strong><em>类的反射</em></strong> 来实现更简单的驱动注册。</p>
-</blockquote>
-<p>JDBC 一次简单的调用大致分为 5 步：</p>
-<ol>
-<li>加载驱动：</li>
-</ol>
+          <h2 id="WebView"><a href="#WebView" class="headerlink" title="WebView"></a>WebView</h2><blockquote>
+<h4 id="WebView-加载网页的方式"><a href="#WebView-加载网页的方式" class="headerlink" title="WebView 加载网页的方式"></a>WebView 加载网页的方式</h4></blockquote>
+<h5 id="加载网络-URL"><a href="#加载网络-URL" class="headerlink" title="加载网络 URL:"></a>加载网络 URL:</h5><p><code>webview.loadUrl(&quot;http//...&quot;);</code></p>
+<h5 id="加载-assets-下的-HTML-文件："><a href="#加载-assets-下的-HTML-文件：" class="headerlink" title="加载 assets 下的 HTML 文件："></a>加载 assets 下的 HTML 文件：</h5>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2020/11/13/blog/java/JDBC/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <div>
-    
-    </div>
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://ruoxijun.github.io/2020/11/13/blog/java/jc/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/img.jpg">
-      <meta itemprop="name" content="ruoxijun">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="若惜君">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/11/13/blog/java/jc/" class="post-title-link" itemprop="url">JAVA 基础</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2020-11-13 14:33:01 / 修改时间：14:53:17" itemprop="dateCreated datePublished" datetime="2020-11-13T14:33:01+08:00">2020-11-13</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java/" itemprop="url" rel="index"><span itemprop="name">java</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="JAVA-基础进阶巩固"><a href="#JAVA-基础进阶巩固" class="headerlink" title="JAVA 基础进阶巩固"></a><center>JAVA 基础进阶巩固</center></h3><h3 id="类-class-："><a href="#类-class-：" class="headerlink" title="类(class)："></a>类(class)：</h3><ul>
-<li>类：是描述相同事物的共同特征的抽象。</li>
-<li>对象：是基于类具体创造的实例。</li>
-<li>类名建议使用驼峰写法,一个 java 代码文件中可以定义多个类。但只有 java 文件名的同名类才能被 public 修饰。</li>
-<li>类中有且只有五大成分：成员变量，成员方法，构造器，代码块，内部类。</li>
-<li><code>类名 变量=new 构造器</code> 类有一个默认的构造器，当定义了其它构造器时此默认构造器将不存在。</li>
-</ul>
-<h3 id="面向对象："><a href="#面向对象：" class="headerlink" title="面向对象："></a>面向对象：</h3><ul>
-<li>面像对象的三大特征：封装，继承，多态。</li>
-<li>封装的作用：提高代码安全性，实现代码组件化。</li>
-<li>子类实际上继承了父类的私有成员，只是不能直接访问。</li>
-<li>子类实际上并未继承父类的静态成员，只是与父类共享。</li>
-<li>方法重写：<ul>
-<li>子类重写父类方法时，必须保证名称，参数列表与父类重写方法一致。</li>
-<li>子类重写方法的返回值类型范围只能等于或小于父类声明的返回值。</li>
-<li>子类重写方法的修饰符只能等于或大于父类声明的修饰符。</li>
-<li>子类重写方法抛出的异常只能等于或小于父类抛出的异常。</li>
-<li>重写方法应加上 <code>@Override</code> 注解。</li>
-</ul>
-</li>
-<li><code>this</code> 与 <code>super</code> :<ul>
-<li><code>this(参数列表)</code> 调用本类构造器。</li>
-<li><code>super(参数列表)</code> 调用父类的构造器，一般子类构造器中默认带有 <code>super()</code> 。</li>
-<li><code>this</code> 与 <code>super</code> 必须放在构造器的第一行，且它们不能同时出现在一个构造器中。</li>
-</ul>
-</li>
-<li>抽象类与接口：<ul>
-<li>抽象类用 <code>abstract</code> 修饰，且不能被实例化。抽象类中不一定得有抽象成员。</li>
-<li>有抽象方法就一定是抽象类，子类必须重写父类方法否则将此类定义为抽象类。</li>
-<li>抽象类是一种思想，接口是一种规范。一个类可实现多个接口。</li>
-<li>父类方法与接口默认(default)方法同名时，将执行父类的方法。</li>
-<li>当实现多接口时，多个接口中默认方法同名时我们必须重写这个方法。</li>
-</ul>
-</li>
-<li><code>final</code> 关键字：<ul>
-<li>修饰的类为最终类，不能被继承。修饰的方法为最终方法，不能不重写。</li>
-<li>修饰的变量为常量，有且仅能被 <strong>赋值一次</strong>，类中定义的成员常量可利用构造器赋初值。</li>
-<li><code>abstract</code> 与 <code>final</code> 为互斥关系不能同时修饰一个成员。</li>
-</ul>
-</li>
-</ul>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/11/13/blog/java/jc/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <div>
-    
-    </div>
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://ruoxijun.github.io/2020/11/13/blog/interest/sql/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/img.jpg">
-      <meta itemprop="name" content="ruoxijun">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="若惜君">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/11/13/blog/interest/sql/" class="post-title-link" itemprop="url">MySQL 语法基础</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2020-11-13 14:33:01 / 修改时间：14:51:40" itemprop="dateCreated datePublished" datetime="2020-11-13T14:33:01+08:00">2020-11-13</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/SQL/" itemprop="url" rel="index"><span itemprop="name">SQL</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="MySql-使用与-SQL-语句基础"><a href="#MySql-使用与-SQL-语句基础" class="headerlink" title="MySql 使用与 SQL 语句基础"></a><center>MySql 使用与 SQL 语句基础<center></center></center></h2><blockquote>
-<h3 id="MySql-使用："><a href="#MySql-使用：" class="headerlink" title="MySql 使用："></a>MySql 使用：</h3></blockquote>
-<p>以下操作都是以管理员方式打开 <code>cmd</code> 并切换至安装 MySQL 的 <code>bin</code> 目录下执行：</p>
-<ul>
-<li>启动与关闭 MySql ：</li>
-</ul>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">net <span class="keyword">start</span> mysql // 启动mysql</span><br><span class="line">net <span class="keyword">stop</span> mysql // 关闭mysql</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/11/13/blog/interest/sql/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <div>
-    
-    </div>
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://ruoxijun.github.io/2020/11/13/blog/interest/MarkDown%E5%86%99%E6%B3%95/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/img.jpg">
-      <meta itemprop="name" content="ruoxijun">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="若惜君">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/11/13/blog/interest/MarkDown%E5%86%99%E6%B3%95/" class="post-title-link" itemprop="url">markdown 语法学习</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2020-11-13 14:33:01 / 修改时间：14:51:35" itemprop="dateCreated datePublished" datetime="2020-11-13T14:33:01+08:00">2020-11-13</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/markdown/" itemprop="url" rel="index"><span itemprop="name">markdown</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <blockquote>
-<h2 id="1-字体-包裹的符号都是可以嵌套使用的-："><a href="#1-字体-包裹的符号都是可以嵌套使用的-：" class="headerlink" title="1. 字体(包裹的符号都是可以嵌套使用的)："></a>1. <strong>字体</strong>(包裹的符号都是可以嵌套使用的)：</h2></blockquote>
-<h4 id="写法："><a href="#写法：" class="headerlink" title="写法："></a>写法：</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">*斜体* || _斜体_</span><br><span class="line">**加粗** </span><br><span class="line">***加粗斜体***</span><br><span class="line">~~中划线~~ </span><br><span class="line">&lt;u&gt;下划线&lt;/u&gt;</span><br><span class="line">分割线(需要独占一行)：</span><br><span class="line">***</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-
-<h4 id="显示结果如下："><a href="#显示结果如下：" class="headerlink" title="显示结果如下："></a>显示结果如下：</h4><p><em>斜体</em> || <em>斜体</em><br><strong>加粗</strong><br><strong><em>加粗斜体</em></strong><br><del>中划线</del><br><u>下划线</u><br>分割线(需要独占一行)：</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/11/13/blog/interest/MarkDown%E5%86%99%E6%B3%95/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <div>
-    
-    </div>
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://ruoxijun.github.io/2020/11/13/blog/interest/Linux%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/img.jpg">
-      <meta itemprop="name" content="ruoxijun">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="若惜君">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/11/13/blog/interest/Linux%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/" class="post-title-link" itemprop="url">Linux 命令基础</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2020-11-13 14:33:01 / 修改时间：14:51:31" itemprop="dateCreated datePublished" datetime="2020-11-13T14:33:01+08:00">2020-11-13</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <blockquote>
-<h2 id="Linux命令基本格式"><a href="#Linux命令基本格式" class="headerlink" title="Linux命令基本格式"></a>Linux命令基本格式</h2></blockquote>
-<ul>
-<li><strong><em>命令格式</em></strong>：命令 [-选项] [参数]</li>
-<li>多个选项可以写在一起只用一个 <strong><em>‘ - ‘</em></strong></li>
-<li>Linux中选项前加单杠（-）是为简写，双杠（–）为全写，效果一致</li>
-<li><code>ctrl+c</code>：可退出进入的某种状态</li>
-</ul>
-<hr>
-<blockquote>
-<h2 id="文件命令"><a href="#文件命令" class="headerlink" title="文件命令"></a>文件命令</h2></blockquote>
-<h4 id="查询命令："><a href="#查询命令：" class="headerlink" title="查询命令："></a><em>查询命令：</em></h4>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/11/13/blog/interest/Linux%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <div>
-    
-    </div>
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://ruoxijun.github.io/2020/11/13/blog/interest/axios/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/img.jpg">
-      <meta itemprop="name" content="ruoxijun">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="若惜君">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/11/13/blog/interest/axios/" class="post-title-link" itemprop="url">Axios 基础</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2020-11-13 14:33:01 / 修改时间：14:51:27" itemprop="dateCreated datePublished" datetime="2020-11-13T14:33:01+08:00">2020-11-13</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/HTML/" itemprop="url" rel="index"><span itemprop="name">HTML</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="Axios-简单入门"><a href="#Axios-简单入门" class="headerlink" title="Axios 简单入门"></a><center>Axios 简单入门<center></center></center></h1><blockquote>
-<h3 id="ajax-与-axios"><a href="#ajax-与-axios" class="headerlink" title="ajax 与 axios"></a>ajax 与 axios</h3></blockquote>
-<p>下面是一段 javascript 原生 ajax 发送一个简单的请求：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> ajax=<span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">    ajax.open(<span class="string">&#x27;get&#x27;</span>,<span class="string">&#x27;1.txt&#x27;</span>,<span class="literal">true</span>);</span><br><span class="line">    ajax.send();</span><br><span class="line">    ajax.onreadystatechange=<span class="function">()=&gt;</span>&#123;</span><br><span class="line">        <span class="keyword">let</span> con=ajax.responseText;</span><br><span class="line">        alert(con);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-<p>axios 的简单使用：</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/11/13/blog/interest/axios/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <div>
-    
-    </div>
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://ruoxijun.github.io/2020/11/13/blog/html/jquery/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/img.jpg">
-      <meta itemprop="name" content="ruoxijun">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="若惜君">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/11/13/blog/html/jquery/" class="post-title-link" itemprop="url">jQuery 基础</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2020-11-13 14:33:01 / 修改时间：14:51:22" itemprop="dateCreated datePublished" datetime="2020-11-13T14:33:01+08:00">2020-11-13</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/HTML/" itemprop="url" rel="index"><span itemprop="name">HTML</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="jQuery-极速一览"><a href="#jQuery-极速一览" class="headerlink" title="jQuery 极速一览"></a>jQuery 极速一览</h2><h3 id="入口函数："><a href="#入口函数：" class="headerlink" title="入口函数："></a>入口函数：</h3><p>我们先看一下原生 js 的入口函数：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 原生js写法</span></span><br><span class="line"><span class="built_in">window</span>.onload = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;onload&quot;</span>);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<p>jq 的入口函数后 4 种：</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/11/13/blog/html/jquery/#more" rel="contents">
+              <a class="btn" href="/2020/05/17/blog/android/webview/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>

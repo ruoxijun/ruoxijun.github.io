@@ -188,7 +188,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://ruoxijun.github.io/2020/11/13/blog/java/ssm/mybatis/config/">
+    <link itemprop="mainEntityOfPage" href="https://ruoxijun.github.io/2020/07/06/blog/android/data/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/img.jpg">
@@ -202,7 +202,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/11/13/blog/java/ssm/mybatis/config/" class="post-title-link" itemprop="url">mybatis 配置</a>
+            <a href="/2020/07/06/blog/android/data/" class="post-title-link" itemprop="url">Android 数据存储</a>
         </h2>
 
         <div class="post-meta">
@@ -211,17 +211,23 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-11-13 14:33:01 / 修改时间：14:52:34" itemprop="dateCreated datePublished" datetime="2020-11-13T14:33:01+08:00">2020-11-13</time>
+              <time title="创建时间：2020-07-06 20:01:47" itemprop="dateCreated datePublished" datetime="2020-07-06T20:01:47+08:00">2020-07-06</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-11-13 15:16:54" itemprop="dateModified" datetime="2020-11-13T15:16:54+08:00">2020-11-13</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/ssm/" itemprop="url" rel="index"><span itemprop="name">ssm</span></a>
+                  <a href="/categories/android/" itemprop="url" rel="index"><span itemprop="name">android</span></a>
                 </span>
             </span>
 
@@ -236,15 +242,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="配置文件，日志，分页"><a href="#配置文件，日志，分页" class="headerlink" title="配置文件，日志，分页"></a><center>配置文件，日志，分页</center></h2><h3 id="核心配置文件解析与优化："><a href="#核心配置文件解析与优化：" class="headerlink" title="核心配置文件解析与优化："></a>核心配置文件解析与优化：</h3><p>详情请看：<a target="_blank" rel="noopener" href="https://mybatis.org/mybatis-3/zh/configuration.html#typeAliases">官方配置文档</a></p>
-<blockquote>
-<p>注意官方规定<code>mybatis-config.xml</code>文件中<code>configuration</code>标签中的配置标签必须遵循如下顺序：</p>
-<p><code>properties</code> → <code>settings</code> → <code>typeAliases</code> → <code>typeHandlers</code> → <code>objectFactory</code> → <code>objectWrapperFactory</code> → <code>reflectorFactory</code> → <code>plugins</code> → <code>environments</code> → <code>databaseIdProvider</code> → <code>mappers</code></p>
-</blockquote>
-<h4 id="1-环境配置（environments）："><a href="#1-环境配置（environments）：" class="headerlink" title="1. 环境配置（environments）："></a>1. 环境配置（environments）：</h4>
+          <h2 id="Android-数据存储"><a href="#Android-数据存储" class="headerlink" title="Android 数据存储"></a><center>Android 数据存储<center></center></center></h2><blockquote>
+<h3 id="SharedPreferences-轻量级存储："><a href="#SharedPreferences-轻量级存储：" class="headerlink" title="SharedPreferences 轻量级存储："></a>SharedPreferences 轻量级存储：</h3></blockquote>
+<p>SharedPreferences是存储共享变量的接口，文件路径位于“/data/data/应用程序包/shared_prefs”目录下的xml文件。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 获取共享文件对象，参1为文件名不存在则创建，参2为操作文件的模式推荐使用：&#x27;MODE_PRIVATE&#x27;</span></span><br><span class="line">SharedPreferences sp=getSharedPreferences(<span class="string">&quot;data&quot;</span>,MODE_PRIVATE);</span><br><span class="line"><span class="comment">// 查看某key数据是否存在</span></span><br><span class="line">sp.contains(<span class="string">&quot;key&quot;</span>);</span><br><span class="line"><span class="comment">// 根据key获取value，参2为key不存在时返回的默认值</span></span><br><span class="line">sp.getString(<span class="string">&quot;key&quot;</span>,<span class="string">&quot;defaultValue&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<p>Editor接口为SharedPreferences接口的内部接口，专编辑共享数据。通过共享对象的 <code>edit()</code> 获取到该对象。</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2020/11/13/blog/java/ssm/mybatis/config/#more" rel="contents">
+              <a class="btn" href="/2020/07/06/blog/android/data/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -272,7 +278,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://ruoxijun.github.io/2020/11/13/blog/java/ssm/mybatis/advanced/">
+    <link itemprop="mainEntityOfPage" href="https://ruoxijun.github.io/2020/07/06/blog/interest/sql/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/img.jpg">
@@ -286,7 +292,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/11/13/blog/java/ssm/mybatis/advanced/" class="post-title-link" itemprop="url">mybatis 动态SQL</a>
+            <a href="/2020/07/06/blog/interest/sql/" class="post-title-link" itemprop="url">MySQL 语法基础</a>
         </h2>
 
         <div class="post-meta">
@@ -295,17 +301,23 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-11-13 14:33:01 / 修改时间：14:52:30" itemprop="dateCreated datePublished" datetime="2020-11-13T14:33:01+08:00">2020-11-13</time>
+              <time title="创建时间：2020-07-06 10:46:48" itemprop="dateCreated datePublished" datetime="2020-07-06T10:46:48+08:00">2020-07-06</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-11-13 15:19:14" itemprop="dateModified" datetime="2020-11-13T15:19:14+08:00">2020-11-13</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/ssm/" itemprop="url" rel="index"><span itemprop="name">ssm</span></a>
+                  <a href="/categories/SQL/" itemprop="url" rel="index"><span itemprop="name">SQL</span></a>
                 </span>
             </span>
 
@@ -320,12 +332,16 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="注解，多表查询与动态SQL，缓存"><a href="#注解，多表查询与动态SQL，缓存" class="headerlink" title="注解，多表查询与动态SQL，缓存"></a><center>注解，多表查询与动态SQL，缓存</center></h2><h3 id="使用注解开发："><a href="#使用注解开发：" class="headerlink" title="使用注解开发："></a>使用注解开发：</h3><p>使用注解进行开发时要注意：注解来映射简单语句会使代码显得更加简洁，但复杂的操作，最好用 XML 来映射语句。</p>
-<p>使用注解的方法就不用创建Mapper.xml（可以创建），因此在<code>mybatis-config.xml</code>配置文件中注册映射器时建议使用<code>mapper</code>的<strong>class</strong>属性利用Mapper接口来注册映射器：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">mappers</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">mapper</span> <span class="attr">class</span>=<span class="string">&quot;io.github.ruoxijun.mapper.UserMapper&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">mappers</span>&gt;</span></span><br></pre></td></tr></table></figure>
+          <h2 id="MySql-使用与-SQL-语句基础"><a href="#MySql-使用与-SQL-语句基础" class="headerlink" title="MySql 使用与 SQL 语句基础"></a><center>MySql 使用与 SQL 语句基础<center></center></center></h2><blockquote>
+<h3 id="MySql-使用："><a href="#MySql-使用：" class="headerlink" title="MySql 使用："></a>MySql 使用：</h3></blockquote>
+<p>以下操作都是以管理员方式打开 <code>cmd</code> 并切换至安装 MySQL 的 <code>bin</code> 目录下执行：</p>
+<ul>
+<li>启动与关闭 MySql ：</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">net <span class="keyword">start</span> mysql // 启动mysql</span><br><span class="line">net <span class="keyword">stop</span> mysql // 关闭mysql</span><br></pre></td></tr></table></figure>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2020/11/13/blog/java/ssm/mybatis/advanced/#more" rel="contents">
+              <a class="btn" href="/2020/07/06/blog/interest/sql/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -353,7 +369,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://ruoxijun.github.io/2020/11/13/blog/java/ssm/ssm/">
+    <link itemprop="mainEntityOfPage" href="https://ruoxijun.github.io/2020/07/04/blog/android/ViewPager/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/img.jpg">
@@ -367,7 +383,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/11/13/blog/java/ssm/ssm/" class="post-title-link" itemprop="url">ssm 整合</a>
+            <a href="/2020/07/04/blog/android/ViewPager/" class="post-title-link" itemprop="url">Fragment 与 ViewPager</a>
         </h2>
 
         <div class="post-meta">
@@ -376,17 +392,23 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-11-13 14:33:01 / 修改时间：14:53:05" itemprop="dateCreated datePublished" datetime="2020-11-13T14:33:01+08:00">2020-11-13</time>
+              <time title="创建时间：2020-07-04 13:20:20" itemprop="dateCreated datePublished" datetime="2020-07-04T13:20:20+08:00">2020-07-04</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-11-13 15:17:58" itemprop="dateModified" datetime="2020-11-13T15:17:58+08:00">2020-11-13</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/ssm/" itemprop="url" rel="index"><span itemprop="name">ssm</span></a>
+                  <a href="/categories/android/" itemprop="url" rel="index"><span itemprop="name">android</span></a>
                 </span>
             </span>
 
@@ -401,12 +423,17 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="SSM-整合"><a href="#SSM-整合" class="headerlink" title="SSM 整合"></a><center>SSM 整合</center></h1><h3 id="依赖归纳与资源过滤："><a href="#依赖归纳与资源过滤：" class="headerlink" title="依赖归纳与资源过滤："></a>依赖归纳与资源过滤：</h3><h4 id="1-依赖：更新于：2020年8月29日16-56-27"><a href="#1-依赖：更新于：2020年8月29日16-56-27" class="headerlink" title="1.依赖：更新于：2020年8月29日16:56:27"></a>1.依赖：<em>更新于：2020年8月29日16:56:27</em></h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- Spring springmvc --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-webmvc<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>5.2.8.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- spring-jdbc --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-jdbc<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>5.2.8.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- spring aop切面编程 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.aspectj<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>aspectjweaver<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.9.6<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">scope</span>&gt;</span>runtime<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- Mybatis --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.mybatis<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mybatis<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>3.5.5<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- mybatis整合spring的适配包 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.mybatis<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mybatis-spring<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.0.5<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- 数据库驱动 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>mysql<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mysql-connector-java<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>8.0.21<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 数据库连接池 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.mchange<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>c3p0<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>0.9.5.5<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- servlet 与 jsp --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>javax.servlet<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>javax.servlet-api<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>4.0.1<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">scope</span>&gt;</span>provided<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>javax.servlet.jsp<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>javax.servlet.jsp-api<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.3.3<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">scope</span>&gt;</span>provided<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>jstl<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>jstl<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- 测试 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>junit<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>junit<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>4.13<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">scope</span>&gt;</span>test<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- lombok --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.projectlombok<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>lombok<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.18.12<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- jackson --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.fasterxml.jackson.core<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>jackson-databind<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.11.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br></pre></td></tr></table></figure>
+          <h3 id="Fragment-与-ViewPager"><a href="#Fragment-与-ViewPager" class="headerlink" title="Fragment 与 ViewPager"></a>Fragment 与 ViewPager</h3><h4 id="Fragment："><a href="#Fragment：" class="headerlink" title="Fragment："></a>Fragment：</h4><ol>
+<li>创建一个 Fragment：</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyFragment</span> <span class="keyword">extends</span> <span class="title">Fragment</span> </span>&#123;<span class="comment">//继承Fragment</span></span><br><span class="line">    <span class="meta">@Override</span><span class="comment">//拿到上下文</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onAttach</span><span class="params">(<span class="meta">@NonNull</span> Context context)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.onAttach(context);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Nullable</span></span><br><span class="line">    <span class="meta">@Override</span><span class="comment">//指定视图文件</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> View <span class="title">onCreateView</span><span class="params">(<span class="meta">@NonNull</span> LayoutInflater inflater, <span class="meta">@Nullable</span> ViewGroup container, <span class="meta">@Nullable</span> Bundle savedInstanceState)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//R.layout.fragement为你创建的Fragment的布局文件</span></span><br><span class="line">        View view=inflater.inflate(R.layout.fragement,container,<span class="keyword">false</span>);</span><br><span class="line">        <span class="keyword">return</span> view;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span><span class="comment">//对组件做操作</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onViewCreated</span><span class="params">(<span class="meta">@NonNull</span> View view, <span class="meta">@Nullable</span> Bundle savedInstanceState)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.onViewCreated(view, savedInstanceState);</span><br><span class="line">        TextView textView=view.findViewById(R.id.text);</span><br><span class="line">        textView.setText(<span class="string">&quot;--MyFragment2--&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h4 id="2-pom-xml中Maven资源过滤设置："><a href="#2-pom-xml中Maven资源过滤设置：" class="headerlink" title="2. pom.xml中Maven资源过滤设置："></a>2. pom.xml中Maven资源过滤设置：</h4>
+<ol start="2">
+<li>在 Activity 中的添加 Fragment：</li>
+</ol>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2020/11/13/blog/java/ssm/ssm/#more" rel="contents">
+              <a class="btn" href="/2020/07/04/blog/android/ViewPager/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -434,7 +461,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://ruoxijun.github.io/2020/11/13/blog/java/jvm/index/">
+    <link itemprop="mainEntityOfPage" href="https://ruoxijun.github.io/2020/07/03/blog/java/io/file/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/img.jpg">
@@ -448,7 +475,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/11/13/blog/java/jvm/index/" class="post-title-link" itemprop="url">jvm</a>
+            <a href="/2020/07/03/blog/java/io/file/" class="post-title-link" itemprop="url">File and 字节流</a>
         </h2>
 
         <div class="post-meta">
@@ -457,10 +484,231 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-11-13 14:33:01 / 修改时间：14:52:23" itemprop="dateCreated datePublished" datetime="2020-11-13T14:33:01+08:00">2020-11-13</time>
+              <time title="创建时间：2020-07-03 15:06:15" itemprop="dateCreated datePublished" datetime="2020-07-03T15:06:15+08:00">2020-07-03</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-11-13 15:20:52" itemprop="dateModified" datetime="2020-11-13T15:20:52+08:00">2020-11-13</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index"><span itemprop="name">java</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="File-and-字节流"><a href="#File-and-字节流" class="headerlink" title="File and 字节流"></a><center>File and 字节流</center></h2><blockquote>
+<h3 id="File："><a href="#File：" class="headerlink" title="File："></a>File：</h3></blockquote>
+<ul>
+<li>初始化一个 <code>File</code> 对象：<ul>
+<li>以路径最后所指文为准，最后时文件夹则为文件夹对象反之文件同理。</li>
+<li><code>File.separator</code> ：返回系统文件目录分隔符</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//接受一个目录路径字符串，实例化为文件或文件夹对象</span></span><br><span class="line">File file=<span class="keyword">new</span> File(<span class="string">&quot;E:&quot;</span>+File.separator+<span class="string">&quot;test&quot;</span>+File.separator+<span class="string">&quot;test.txt&quot;</span>);</span><br><span class="line"><span class="comment">//接受两个字符串，参2拼接在参1后面</span></span><br><span class="line">File file2=<span class="keyword">new</span> File(<span class="string">&quot;E:&quot;</span>+File.separator+<span class="string">&quot;test&quot;</span>,<span class="string">&quot;test.txt&quot;</span>);</span><br><span class="line"><span class="comment">//接受一个file对象，参2接入该目录中</span></span><br><span class="line">File file3=<span class="keyword">new</span> File(file,<span class="string">&quot;test.txt&quot;</span>);</span><br><span class="line"><span class="comment">//File 对像 tostring 方法返回 getPath 方法值</span></span><br><span class="line">System.out.println(file);</span><br><span class="line">System.out.println(file2);</span><br><span class="line">System.out.println(file3);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>File</code> 常用方法：</li>
+</ul>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/07/03/blog/java/io/file/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <div>
+    
+    </div>
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://ruoxijun.github.io/2020/06/30/blog/python/basispro/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/img.jpg">
+      <meta itemprop="name" content="ruoxijun">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="若惜君">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/06/30/blog/python/basispro/" class="post-title-link" itemprop="url">Python 进阶</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-06-30 14:15:34" itemprop="dateCreated datePublished" datetime="2020-06-30T14:15:34+08:00">2020-06-30</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-11-13 15:13:58" itemprop="dateModified" datetime="2020-11-13T15:13:58+08:00">2020-11-13</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/python/" itemprop="url" rel="index"><span itemprop="name">python</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <blockquote>
+<h2 id="Python-进阶"><a href="#Python-进阶" class="headerlink" title="Python 进阶"></a>Python 进阶</h2></blockquote>
+<h3 id="File-文件-："><a href="#File-文件-：" class="headerlink" title="File(文件)："></a>File(文件)：</h3><ul>
+<li>打开文件：参 1 文件路径名，参 2 文件打开模式，参 3 编码格式(默认 win 上 gbk)<ul>
+<li><code>f = open(&quot;E:/test/qq.html&quot;, &quot;r&quot;, encoding=&#39;utf-8&#39;)</code></li>
+</ul>
+</li>
+<li>关闭文件 ： <code>f.close()</code></li>
+</ul>
+<h4 id="模式："><a href="#模式：" class="headerlink" title="模式："></a>模式：</h4><table>
+<thead>
+<tr>
+<th>模式</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>r</strong></td>
+<td>只读，指针指向开头</td>
+</tr>
+<tr>
+<td><strong>w</strong></td>
+<td>只写，指针指向开头。文件不存在将创建文件</td>
+</tr>
+<tr>
+<td><strong>a</strong></td>
+<td>追加，指针指向结尾。文件不存在创建新文件</td>
+</tr>
+<tr>
+<td>可附加模式</td>
+<td>“+”：用于读写，”b”：以二进制打开文件</td>
+</tr>
+</tbody></table>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/06/30/blog/python/basispro/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <div>
+    
+    </div>
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://ruoxijun.github.io/2020/06/29/blog/java/jvm/index/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/img.jpg">
+      <meta itemprop="name" content="ruoxijun">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="若惜君">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/06/29/blog/java/jvm/index/" class="post-title-link" itemprop="url">jvm</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-06-29 17:24:52" itemprop="dateCreated datePublished" datetime="2020-06-29T17:24:52+08:00">2020-06-29</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-11-13 15:22:05" itemprop="dateModified" datetime="2020-11-13T15:22:05+08:00">2020-11-13</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -503,7 +751,7 @@
 <h3 id="Runtime-Data-Areas-运行时数据区"><a href="#Runtime-Data-Areas-运行时数据区" class="headerlink" title="Runtime Data Areas(运行时数据区)"></a>Runtime Data Areas(运行时数据区)</h3><p><strong><em>线程共享</em></strong> (且在虚拟机启动时创建) ：</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2020/11/13/blog/java/jvm/index/#more" rel="contents">
+              <a class="btn" href="/2020/06/29/blog/java/jvm/index/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -531,7 +779,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://ruoxijun.github.io/2020/11/13/blog/java/javaweb/servlet/">
+    <link itemprop="mainEntityOfPage" href="https://ruoxijun.github.io/2020/06/27/blog/python/basis/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/img.jpg">
@@ -545,7 +793,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/11/13/blog/java/javaweb/servlet/" class="post-title-link" itemprop="url">servlet</a>
+            <a href="/2020/06/27/blog/python/basis/" class="post-title-link" itemprop="url">python 基础</a>
         </h2>
 
         <div class="post-meta">
@@ -554,17 +802,23 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-11-13 14:33:01 / 修改时间：14:52:19" itemprop="dateCreated datePublished" datetime="2020-11-13T14:33:01+08:00">2020-11-13</time>
+              <time title="创建时间：2020-06-27 13:44:47" itemprop="dateCreated datePublished" datetime="2020-06-27T13:44:47+08:00">2020-06-27</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-11-13 15:14:43" itemprop="dateModified" datetime="2020-11-13T15:14:43+08:00">2020-11-13</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Javaweb/" itemprop="url" rel="index"><span itemprop="name">Javaweb</span></a>
+                  <a href="/categories/python/" itemprop="url" rel="index"><span itemprop="name">python</span></a>
                 </span>
             </span>
 
@@ -579,108 +833,28 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="Servlet"><a href="#Servlet" class="headerlink" title="Servlet"></a><center>Servlet</center></h1><h3 id="web基本概念"><a href="#web基本概念" class="headerlink" title="web基本概念:"></a>web基本概念:</h3><ul>
-<li>http：超文本传输协议，是一个简单的请求响应协议，它通常运行在TCP之上。（https：安全的）</li>
-<li>请求方式：get，post，delete，put …</li>
-<li>响应状态码：200请求响应成功，3xx请求重定向，4xx找不到资源，5xx服务器错误</li>
+          <blockquote>
+<h2 id="python-基础"><a href="#python-基础" class="headerlink" title="python 基础"></a>python 基础</h2></blockquote>
+<h3 id="基础超速一览："><a href="#基础超速一览：" class="headerlink" title="基础超速一览："></a>基础超速一览：</h3><ul>
+<li><code>print(&quot;hello world!&quot;)</code> ：打印默认会换行逗号添加 <code>end=&#39;&#39;</code> 解除，python2 支持不要括号 <code>print &quot;hello world!&quot;</code> ,</li>
+<li>定义变量：python 定义变量不需要关键字只需要定义变量名和赋值。python 中用 <code>#</code> 作为注释</li>
+<li><code>print(&quot;hello world!\n&quot; * 3)</code> ：python 中字符串可以做乘法</li>
+<li><code>input(&quot;请输入：&quot;)</code> ：接受键盘的输入，返回输入的字符串</li>
+<li>类型转换：<code>int(表达式)</code> <code>str(表达式)</code> <code>float(表达式)</code> ,bool 值<code>true==1</code> <code>false==0</code></li>
+<li><code>import random</code> ： 引入模块 <code>random.randint(1,10)</code> 使用模块方法产生随机数</li>
+<li>基本数据类型：<code>str</code> <code>int</code> <code>float</code> <code>bool</code></li>
+<li>类型判断： <code>type(表达式)</code> 返回其类型的字符串， <code>isinstance(表达式,数据类型)</code> 判断参 1 的值是否是参 2 的数据类型</li>
+<li>运算符：<code>**</code> 幂运算，<code>//</code> 取整除(向下除)， 非 <code>not</code> 或 <code>or</code> 且<code>and</code></li>
+<li><code>if</code>语句：python 中没有大括号，都用缩进表示</li>
 </ul>
-<h3 id="servlet-接口："><a href="#servlet-接口：" class="headerlink" title="servlet 接口："></a>servlet 接口：</h3><blockquote>
-<p>servlet 是负责服务器和客户端通信的接口需要我们自己写一个类实现它的方法。</p>
-</blockquote>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/11/13/blog/java/javaweb/servlet/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> 条件:</span><br><span class="line">    语句</span><br><span class="line"><span class="keyword">elif</span> 条件:</span><br><span class="line">    语句</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    语句</span><br></pre></td></tr></table></figure>
 
-    
-    
-    
-
-    <div>
-    
-    </div>
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://ruoxijun.github.io/2020/11/13/blog/java/javaweb/jsp/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/img.jpg">
-      <meta itemprop="name" content="ruoxijun">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="若惜君">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/11/13/blog/java/javaweb/jsp/" class="post-title-link" itemprop="url">jsp 基础使用</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2020-11-13 14:33:01 / 修改时间：14:52:14" itemprop="dateCreated datePublished" datetime="2020-11-13T14:33:01+08:00">2020-11-13</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Javaweb/" itemprop="url" rel="index"><span itemprop="name">Javaweb</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="JSP"><a href="#JSP" class="headerlink" title="JSP"></a><center>JSP</center></h1><blockquote>
 <ul>
-<li><p>负责与用户的交互，将最终界面呈现给用户。是 HTML + js + Css + java 的混合文件。</p>
-</li>
-<li><p>JSP 文件最终转换为一个 java 文件，之后编译为 class 文件。java 中将页面整个 <strong><em><code>write</code></em></strong> 输出。本质上是一个 <strong><em><code>servlet</code></em></strong> 。</p>
-</li>
-<li><p>请求常见状态码：404 资源找不到，400 请求类型不匹配，500 java 程序异常</p>
-</li>
+<li><code>while</code>：</li>
 </ul>
-</blockquote>
-<h3 id="JSP-编码问题："><a href="#JSP-编码问题：" class="headerlink" title="JSP 编码问题："></a>JSP 编码问题：</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page contentType=<span class="string">&quot;text/html; charset=utf-8&quot;</span> %&gt;</span><br><span class="line">&lt;%--这里的utf<span class="number">-8</span>是指服务器发送给客服端时的内容编码 --%&gt;</span><br><span class="line"></span><br><span class="line">&lt;%@ page pageEncoding=<span class="string">&quot;utf-8&quot;</span>%&gt;</span><br><span class="line">&lt;%--这里的utf<span class="number">-8</span>是指 .jsp文件本身的内容编码 --%&gt;</span><br></pre></td></tr></table></figure>
-
-<h3 id="JSP-的-HTML-中嵌入-Java-程序："><a href="#JSP-的-HTML-中嵌入-Java-程序：" class="headerlink" title="JSP 的 HTML 中嵌入 Java 程序："></a>JSP 的 HTML 中嵌入 Java 程序：</h3>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2020/11/13/blog/java/javaweb/jsp/#more" rel="contents">
+              <a class="btn" href="/2020/06/27/blog/python/basis/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -708,7 +882,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://ruoxijun.github.io/2020/11/13/blog/java/javaweb/filter/">
+    <link itemprop="mainEntityOfPage" href="https://ruoxijun.github.io/2020/06/18/blog/java/jc/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/img.jpg">
@@ -722,7 +896,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/11/13/blog/java/javaweb/filter/" class="post-title-link" itemprop="url">过滤器和文件上传下载</a>
+            <a href="/2020/06/18/blog/java/jc/" class="post-title-link" itemprop="url">JAVA 基础</a>
         </h2>
 
         <div class="post-meta">
@@ -731,97 +905,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-11-13 14:33:01 / 修改时间：14:52:11" itemprop="dateCreated datePublished" datetime="2020-11-13T14:33:01+08:00">2020-11-13</time>
+              <time title="创建时间：2020-06-18 10:30:38" itemprop="dateCreated datePublished" datetime="2020-06-18T10:30:38+08:00">2020-06-18</time>
             </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Javaweb/" itemprop="url" rel="index"><span itemprop="name">Javaweb</span></a>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
                 </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="Filter-过滤器："><a href="#Filter-过滤器：" class="headerlink" title="Filter 过滤器："></a>Filter 过滤器：</h2><blockquote>
-<p>对在客户端和服务器之间的中间层 <strong>接口</strong>，可对客户请求消息和服务器响应消息做拦截处理。并且 <strong><em>一个 servlet 文件可以添加多个过滤器，一个过滤器也可过滤多个 servlet 文件</em></strong> 都在 xml 文件中配置。</p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Filter</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">default</span> <span class="keyword">void</span> <span class="title">init</span><span class="params">(FilterConfig filterConfig)</span> <span class="keyword">throws</span> ServletException </span>&#123;&#125;</span><br><span class="line">    <span class="comment">//关键方法</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">doFilter</span><span class="params">(ServletRequest var1, ServletResponse var2, FilterChain var3)</span> <span class="keyword">throws</span> IOException, ServletException</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">default</span> <span class="keyword">void</span> <span class="title">destroy</span><span class="params">()</span> </span>&#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>源码中可以看出它与 servlet 类似，都有 init 初始化和 destroy 销毁的方法。但这两方法与 servlet 不同的是，它们前面加入了 <strong><em>default</em></strong> 关键字(java8 新特性)。可以看到它们后面有方法体，所以我们可以选择不重写此两方法，只重写过滤的关键方法 <strong><em>doFilter</em></strong> 。且此方法与 servlet 中 <strong><em>service</em></strong> 方法类似，可对请求和响应做操作。</p>
-<ul>
-<li>实例情景模拟：在浏览器中用<strong>post</strong>方式并以 name 为 key 传递一个<strong>中文</strong>的值访问 <code>/servlet</code> 映射如下。</li>
-</ul>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/11/13/blog/java/javaweb/filter/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <div>
-    
-    </div>
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://ruoxijun.github.io/2020/11/13/blog/java/io/file/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/img.jpg">
-      <meta itemprop="name" content="ruoxijun">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="若惜君">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/11/13/blog/java/io/file/" class="post-title-link" itemprop="url">File and 字节流</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-11-13 15:24:42" itemprop="dateModified" datetime="2020-11-13T15:24:42+08:00">2020-11-13</time>
               </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2020-11-13 14:33:01 / 修改时间：14:52:04" itemprop="dateCreated datePublished" datetime="2020-11-13T14:33:01+08:00">2020-11-13</time>
-            </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -843,23 +936,50 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="File-and-字节流"><a href="#File-and-字节流" class="headerlink" title="File and 字节流"></a><center>File and 字节流</center></h2><blockquote>
-<h3 id="File："><a href="#File：" class="headerlink" title="File："></a>File：</h3></blockquote>
-<ul>
-<li>初始化一个 <code>File</code> 对象：<ul>
-<li>以路径最后所指文为准，最后时文件夹则为文件夹对象反之文件同理。</li>
-<li><code>File.separator</code> ：返回系统文件目录分隔符</li>
+          <h3 id="JAVA-基础进阶巩固"><a href="#JAVA-基础进阶巩固" class="headerlink" title="JAVA 基础进阶巩固"></a><center>JAVA 基础进阶巩固</center></h3><h3 id="类-class-："><a href="#类-class-：" class="headerlink" title="类(class)："></a>类(class)：</h3><ul>
+<li>类：是描述相同事物的共同特征的抽象。</li>
+<li>对象：是基于类具体创造的实例。</li>
+<li>类名建议使用驼峰写法,一个 java 代码文件中可以定义多个类。但只有 java 文件名的同名类才能被 public 修饰。</li>
+<li>类中有且只有五大成分：成员变量，成员方法，构造器，代码块，内部类。</li>
+<li><code>类名 变量=new 构造器</code> 类有一个默认的构造器，当定义了其它构造器时此默认构造器将不存在。</li>
+</ul>
+<h3 id="面向对象："><a href="#面向对象：" class="headerlink" title="面向对象："></a>面向对象：</h3><ul>
+<li>面像对象的三大特征：封装，继承，多态。</li>
+<li>封装的作用：提高代码安全性，实现代码组件化。</li>
+<li>子类实际上继承了父类的私有成员，只是不能直接访问。</li>
+<li>子类实际上并未继承父类的静态成员，只是与父类共享。</li>
+<li>方法重写：<ul>
+<li>子类重写父类方法时，必须保证名称，参数列表与父类重写方法一致。</li>
+<li>子类重写方法的返回值类型范围只能等于或小于父类声明的返回值。</li>
+<li>子类重写方法的修饰符只能等于或大于父类声明的修饰符。</li>
+<li>子类重写方法抛出的异常只能等于或小于父类抛出的异常。</li>
+<li>重写方法应加上 <code>@Override</code> 注解。</li>
+</ul>
+</li>
+<li><code>this</code> 与 <code>super</code> :<ul>
+<li><code>this(参数列表)</code> 调用本类构造器。</li>
+<li><code>super(参数列表)</code> 调用父类的构造器，一般子类构造器中默认带有 <code>super()</code> 。</li>
+<li><code>this</code> 与 <code>super</code> 必须放在构造器的第一行，且它们不能同时出现在一个构造器中。</li>
+</ul>
+</li>
+<li>抽象类与接口：<ul>
+<li>抽象类用 <code>abstract</code> 修饰，且不能被实例化。抽象类中不一定得有抽象成员。</li>
+<li>有抽象方法就一定是抽象类，子类必须重写父类方法否则将此类定义为抽象类。</li>
+<li>抽象类是一种思想，接口是一种规范。一个类可实现多个接口。</li>
+<li>父类方法与接口默认(default)方法同名时，将执行父类的方法。</li>
+<li>当实现多接口时，多个接口中默认方法同名时我们必须重写这个方法。</li>
+</ul>
+</li>
+<li><code>final</code> 关键字：<ul>
+<li>修饰的类为最终类，不能被继承。修饰的方法为最终方法，不能不重写。</li>
+<li>修饰的变量为常量，有且仅能被 <strong>赋值一次</strong>，类中定义的成员常量可利用构造器赋初值。</li>
+<li><code>abstract</code> 与 <code>final</code> 为互斥关系不能同时修饰一个成员。</li>
 </ul>
 </li>
 </ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//接受一个目录路径字符串，实例化为文件或文件夹对象</span></span><br><span class="line">File file=<span class="keyword">new</span> File(<span class="string">&quot;E:&quot;</span>+File.separator+<span class="string">&quot;test&quot;</span>+File.separator+<span class="string">&quot;test.txt&quot;</span>);</span><br><span class="line"><span class="comment">//接受两个字符串，参2拼接在参1后面</span></span><br><span class="line">File file2=<span class="keyword">new</span> File(<span class="string">&quot;E:&quot;</span>+File.separator+<span class="string">&quot;test&quot;</span>,<span class="string">&quot;test.txt&quot;</span>);</span><br><span class="line"><span class="comment">//接受一个file对象，参2接入该目录中</span></span><br><span class="line">File file3=<span class="keyword">new</span> File(file,<span class="string">&quot;test.txt&quot;</span>);</span><br><span class="line"><span class="comment">//File 对像 tostring 方法返回 getPath 方法值</span></span><br><span class="line">System.out.println(file);</span><br><span class="line">System.out.println(file2);</span><br><span class="line">System.out.println(file3);</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><code>File</code> 常用方法：</li>
-</ul>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2020/11/13/blog/java/io/file/#more" rel="contents">
+              <a class="btn" href="/2020/06/18/blog/java/jc/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -887,7 +1007,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://ruoxijun.github.io/2020/11/13/blog/java/collection/set/">
+    <link itemprop="mainEntityOfPage" href="https://ruoxijun.github.io/2020/06/13/blog/java/thread/thread/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/img.jpg">
@@ -901,7 +1021,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/11/13/blog/java/collection/set/" class="post-title-link" itemprop="url">Set 集合</a>
+            <a href="/2020/06/13/blog/java/thread/thread/" class="post-title-link" itemprop="url">Thread</a>
         </h2>
 
         <div class="post-meta">
@@ -910,10 +1030,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-11-13 14:33:01 / 修改时间：14:51:59" itemprop="dateCreated datePublished" datetime="2020-11-13T14:33:01+08:00">2020-11-13</time>
+              <time title="创建时间：2020-06-13 16:39:57" itemprop="dateCreated datePublished" datetime="2020-06-13T16:39:57+08:00">2020-06-13</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-11-13 15:24:18" itemprop="dateModified" datetime="2020-11-13T15:24:18+08:00">2020-11-13</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -935,18 +1061,16 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="Set-集合"><a href="#Set-集合" class="headerlink" title="Set 集合"></a>Set 集合</h3><blockquote>
-<p>Set 接口 (无序,元素不能重复)，继承了 Collection 接口无特有方法。</p>
-</blockquote>
-<h4 id="Set-已实现类与特性："><a href="#Set-已实现类与特性：" class="headerlink" title="Set 已实现类与特性："></a>Set 已实现类与特性：</h4><ul>
-<li>HashSet：哈希表结构，保证元素唯一性依靠 <code>hashCode()</code> 和 <code>equals()</code> 方法(hash 值相同时再判断 equals,相同将不再存储)，不同步</li>
-<li>TreeSet：是链表结构(指针)，需保证元素唯一性，可排序</li>
-<li>LinkedHashSet：HashSet 的子类，按存入顺序使用</li>
+          <h2 id="多线程"><a href="#多线程" class="headerlink" title="多线程"></a>多线程</h2><h3 id="知识储备："><a href="#知识储备：" class="headerlink" title="知识储备："></a>知识储备：</h3><ul>
+<li>java 中线程类主要依靠 <code>Runnable</code> 接口和 <code>Thread</code> 类。线程的启动主要依靠 <code>Thread</code> 的 <code>start</code>方法。</li>
+<li>线程中发生异常，只会停止异常线程。一般不会影响其它线程。</li>
+<li>线程存在编号从 0 开始。一个线程多次启动会报错，线程执行结束后也不能重启动。</li>
+<li>main 方法是主线程，也是一条线程不能忽视</li>
 </ul>
-<h4 id="Set-利用-Iterator-动态移除元素："><a href="#Set-利用-Iterator-动态移除元素：" class="headerlink" title="Set 利用 Iterator 动态移除元素："></a>Set 利用 Iterator 动态移除元素：</h4>
+<h3 id="线程的创建与基础使用："><a href="#线程的创建与基础使用：" class="headerlink" title="线程的创建与基础使用："></a>线程的创建与基础使用：</h3><p>创建线程一般有两种方式：</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2020/11/13/blog/java/collection/set/#more" rel="contents">
+              <a class="btn" href="/2020/06/13/blog/java/thread/thread/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -974,7 +1098,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://ruoxijun.github.io/2020/11/13/blog/java/collection/map/">
+    <link itemprop="mainEntityOfPage" href="https://ruoxijun.github.io/2020/06/05/blog/html/jquery/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/img.jpg">
@@ -988,7 +1112,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/11/13/blog/java/collection/map/" class="post-title-link" itemprop="url">Map 集合</a>
+            <a href="/2020/06/05/blog/html/jquery/" class="post-title-link" itemprop="url">jQuery 基础</a>
         </h2>
 
         <div class="post-meta">
@@ -997,17 +1121,23 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-11-13 14:33:01 / 修改时间：14:51:55" itemprop="dateCreated datePublished" datetime="2020-11-13T14:33:01+08:00">2020-11-13</time>
+              <time title="创建时间：2020-06-05 10:29:36" itemprop="dateCreated datePublished" datetime="2020-06-05T10:29:36+08:00">2020-06-05</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-11-13 15:18:26" itemprop="dateModified" datetime="2020-11-13T15:18:26+08:00">2020-11-13</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java/" itemprop="url" rel="index"><span itemprop="name">java</span></a>
+                  <a href="/categories/HTML/" itemprop="url" rel="index"><span itemprop="name">HTML</span></a>
                 </span>
             </span>
 
@@ -1022,21 +1152,13 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="Map-集合"><a href="#Map-集合" class="headerlink" title="Map 集合"></a>Map 集合</h3><h4 id="Map-已实现类与特性："><a href="#Map-已实现类与特性：" class="headerlink" title="Map 已实现类与特性："></a>Map 已实现类与特性：</h4><ul>
-<li>Hashtable:哈希表结构，且不允许 null 作为键和值，同步(不建议使用)，键唯一性靠 hashCode()和 equals()(在键对象的类中重写方法，可保证键唯一性)<ul>
-<li>Properties(Hashtable 子类):属性集，<strong><em>键与值都是字符串</em></strong>(没有泛型)，都以 object 存储在其中(自身提供了不用强转的方法)，且可以结合 <strong><em>流</em></strong> 进行键值操作</li>
-</ul>
-</li>
-<li>HashMap: :哈希表结构，且允许<strong>null 作为键和值</strong>，不同步<ul>
-<li>LinkedHashMap：HashMap 的子类，元素顺序为存入顺序(有序)</li>
-</ul>
-</li>
-<li>TreeMap:二叉树结构，会对元素根据键排序(排序方法参照 TreeSet)，不同步</li>
-</ul>
-<h4 id="Map-常用方法："><a href="#Map-常用方法：" class="headerlink" title="Map 常用方法："></a>Map 常用方法：</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">Map map = <span class="keyword">new</span> HashMap();</span><br><span class="line">map.clear();<span class="comment">//清空元素</span></span><br><span class="line">map.size();<span class="comment">//获取元素个数</span></span><br><span class="line">map.containsKey(<span class="string">&quot;obj&quot;</span>);<span class="comment">//是否包含某键</span></span><br><span class="line">map.containsValue(<span class="string">&quot;obj&quot;</span>);<span class="comment">//是否包含某值</span></span><br><span class="line">map.isEmpty();<span class="comment">//集合是否为空</span></span><br><span class="line"></span><br><span class="line">map.get(<span class="string">&quot;key&quot;</span>);<span class="comment">//根据键拿值</span></span><br><span class="line">map.put(<span class="string">&quot;key&quot;</span>, <span class="string">&quot;value&quot;</span>);<span class="comment">//添加元素</span></span><br><span class="line"><span class="comment">//键要保持唯一,添加同一键时会覆盖之前的值,且返回之前的值</span></span><br><span class="line">map.put(<span class="string">&quot;key&quot;</span>, <span class="string">&quot;value2&quot;</span>);<span class="comment">//修改key的值</span></span><br><span class="line">map.putAll(map);<span class="comment">//将一个Map中的所有内容添加到此map中</span></span><br><span class="line">map.remove(<span class="string">&quot;key&quot;</span>);<span class="comment">//根据键移除指定元素,返回删除的值</span></span><br><span class="line">map.remove(<span class="string">&quot;key&quot;</span>, <span class="string">&quot;value&quot;</span>);<span class="comment">//根据键与值移除指定元素(必须完全相同),返回Boolean</span></span><br></pre></td></tr></table></figure>
+          <h2 id="jQuery-极速一览"><a href="#jQuery-极速一览" class="headerlink" title="jQuery 极速一览"></a>jQuery 极速一览</h2><h3 id="入口函数："><a href="#入口函数：" class="headerlink" title="入口函数："></a>入口函数：</h3><p>我们先看一下原生 js 的入口函数：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 原生js写法</span></span><br><span class="line"><span class="built_in">window</span>.onload = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;onload&quot;</span>);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>jq 的入口函数后 4 种：</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2020/11/13/blog/java/collection/map/#more" rel="contents">
+              <a class="btn" href="/2020/06/05/blog/html/jquery/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>

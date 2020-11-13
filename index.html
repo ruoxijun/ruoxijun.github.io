@@ -213,7 +213,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-11-13 14:39:14 / 修改时间：14:53:39" itemprop="dateCreated datePublished" datetime="2020-11-13T14:39:14+08:00">2020-11-13</time>
+              <time title="创建时间：2020-11-13 14:39:14 / 修改时间：15:25:27" itemprop="dateCreated datePublished" datetime="2020-11-13T14:39:14+08:00">2020-11-13</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -267,7 +267,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://ruoxijun.github.io/2020/11/13/blog/python/basispro/">
+    <link itemprop="mainEntityOfPage" href="https://ruoxijun.github.io/2020/10/06/blog/java/ssm/springMVC/date/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/img.jpg">
@@ -281,7 +281,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/11/13/blog/python/basispro/" class="post-title-link" itemprop="url">Python 进阶</a>
+            <a href="/2020/10/06/blog/java/ssm/springMVC/date/" class="post-title-link" itemprop="url">sprintmvc 数据处理</a>
         </h2>
 
         <div class="post-meta">
@@ -290,17 +290,23 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-11-13 14:33:01 / 修改时间：14:53:35" itemprop="dateCreated datePublished" datetime="2020-11-13T14:33:01+08:00">2020-11-13</time>
+              <time title="创建时间：2020-10-06 15:51:21" itemprop="dateCreated datePublished" datetime="2020-10-06T15:51:21+08:00">2020-10-06</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-11-13 15:23:42" itemprop="dateModified" datetime="2020-11-13T15:23:42+08:00">2020-11-13</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/python/" itemprop="url" rel="index"><span itemprop="name">python</span></a>
+                  <a href="/categories/ssm/" itemprop="url" rel="index"><span itemprop="name">ssm</span></a>
                 </span>
             </span>
 
@@ -315,42 +321,12 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <blockquote>
-<h2 id="Python-进阶"><a href="#Python-进阶" class="headerlink" title="Python 进阶"></a>Python 进阶</h2></blockquote>
-<h3 id="File-文件-："><a href="#File-文件-：" class="headerlink" title="File(文件)："></a>File(文件)：</h3><ul>
-<li>打开文件：参 1 文件路径名，参 2 文件打开模式，参 3 编码格式(默认 win 上 gbk)<ul>
-<li><code>f = open(&quot;E:/test/qq.html&quot;, &quot;r&quot;, encoding=&#39;utf-8&#39;)</code></li>
-</ul>
-</li>
-<li>关闭文件 ： <code>f.close()</code></li>
-</ul>
-<h4 id="模式："><a href="#模式：" class="headerlink" title="模式："></a>模式：</h4><table>
-<thead>
-<tr>
-<th>模式</th>
-<th>功能</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>r</strong></td>
-<td>只读，指针指向开头</td>
-</tr>
-<tr>
-<td><strong>w</strong></td>
-<td>只写，指针指向开头。文件不存在将创建文件</td>
-</tr>
-<tr>
-<td><strong>a</strong></td>
-<td>追加，指针指向结尾。文件不存在创建新文件</td>
-</tr>
-<tr>
-<td>可附加模式</td>
-<td>“+”：用于读写，”b”：以二进制打开文件</td>
-</tr>
-</tbody></table>
+          <h2 id="Json-拦截器-异常-文件-流程"><a href="#Json-拦截器-异常-文件-流程" class="headerlink" title="Json,拦截器,异常,文件,流程"></a><center>Json,拦截器,异常,文件,流程</center></h2><h3 id="JSON与数据传递："><a href="#JSON与数据传递：" class="headerlink" title="JSON与数据传递："></a>JSON与数据传递：</h3><h4 id="1-了解javascript对象与json字符串之间的转换："><a href="#1-了解javascript对象与json字符串之间的转换：" class="headerlink" title="1. 了解javascript对象与json字符串之间的转换："></a>1. 了解javascript对象与json字符串之间的转换：</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> o = &#123;<span class="attr">name</span>:<span class="string">&quot;test&quot;</span>,<span class="attr">age</span>:<span class="number">18</span>,<span class="attr">pass</span>:<span class="number">111</span>&#125;;</span><br><span class="line"><span class="comment">// stringify：对象转json字符串</span></span><br><span class="line"><span class="keyword">let</span> json = <span class="built_in">JSON</span>.stringify(o);</span><br><span class="line"><span class="built_in">console</span>.log(json); <span class="comment">// &#123;&quot;name&quot;:&quot;test&quot;,&quot;age&quot;:18,&quot;pass&quot;:111&#125;</span></span><br><span class="line"><span class="comment">// parse：json字符串转对象</span></span><br><span class="line"><span class="keyword">let</span> obj = <span class="built_in">JSON</span>.parse(json);</span><br><span class="line"><span class="built_in">console</span>.log(obj); <span class="comment">// &#123;name: &quot;test&quot;, age: 18, pass: 111&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="2-了解-Jackson："><a href="#2-了解-Jackson：" class="headerlink" title="2. 了解 Jackson："></a>2. 了解 Jackson：</h4>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2020/11/13/blog/python/basispro/#more" rel="contents">
+              <a class="btn" href="/2020/10/06/blog/java/ssm/springMVC/date/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -378,7 +354,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://ruoxijun.github.io/2020/11/13/blog/python/basis/">
+    <link itemprop="mainEntityOfPage" href="https://ruoxijun.github.io/2020/10/06/blog/java/ssm/spring/aop/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/img.jpg">
@@ -392,7 +368,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/11/13/blog/python/basis/" class="post-title-link" itemprop="url">python 基础</a>
+            <a href="/2020/10/06/blog/java/ssm/spring/aop/" class="post-title-link" itemprop="url">spring 注解开发与 Aop</a>
         </h2>
 
         <div class="post-meta">
@@ -401,17 +377,23 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-11-13 14:33:01 / 修改时间：14:53:31" itemprop="dateCreated datePublished" datetime="2020-11-13T14:33:01+08:00">2020-11-13</time>
+              <time title="创建时间：2020-10-06 15:41:24" itemprop="dateCreated datePublished" datetime="2020-10-06T15:41:24+08:00">2020-10-06</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-11-13 15:23:00" itemprop="dateModified" datetime="2020-11-13T15:23:00+08:00">2020-11-13</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/python/" itemprop="url" rel="index"><span itemprop="name">python</span></a>
+                  <a href="/categories/ssm/" itemprop="url" rel="index"><span itemprop="name">ssm</span></a>
                 </span>
             </span>
 
@@ -426,28 +408,11 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <blockquote>
-<h2 id="python-基础"><a href="#python-基础" class="headerlink" title="python 基础"></a>python 基础</h2></blockquote>
-<h3 id="基础超速一览："><a href="#基础超速一览：" class="headerlink" title="基础超速一览："></a>基础超速一览：</h3><ul>
-<li><code>print(&quot;hello world!&quot;)</code> ：打印默认会换行逗号添加 <code>end=&#39;&#39;</code> 解除，python2 支持不要括号 <code>print &quot;hello world!&quot;</code> ,</li>
-<li>定义变量：python 定义变量不需要关键字只需要定义变量名和赋值。python 中用 <code>#</code> 作为注释</li>
-<li><code>print(&quot;hello world!\n&quot; * 3)</code> ：python 中字符串可以做乘法</li>
-<li><code>input(&quot;请输入：&quot;)</code> ：接受键盘的输入，返回输入的字符串</li>
-<li>类型转换：<code>int(表达式)</code> <code>str(表达式)</code> <code>float(表达式)</code> ,bool 值<code>true==1</code> <code>false==0</code></li>
-<li><code>import random</code> ： 引入模块 <code>random.randint(1,10)</code> 使用模块方法产生随机数</li>
-<li>基本数据类型：<code>str</code> <code>int</code> <code>float</code> <code>bool</code></li>
-<li>类型判断： <code>type(表达式)</code> 返回其类型的字符串， <code>isinstance(表达式,数据类型)</code> 判断参 1 的值是否是参 2 的数据类型</li>
-<li>运算符：<code>**</code> 幂运算，<code>//</code> 取整除(向下除)， 非 <code>not</code> 或 <code>or</code> 且<code>and</code></li>
-<li><code>if</code>语句：python 中没有大括号，都用缩进表示</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> 条件:</span><br><span class="line">    语句</span><br><span class="line"><span class="keyword">elif</span> 条件:</span><br><span class="line">    语句</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    语句</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><code>while</code>：</li>
-</ul>
+          <h2 id="注解开发与Aop"><a href="#注解开发与Aop" class="headerlink" title="注解开发与Aop"></a><center>注解开发与Aop</center></h2><h3 id="注解开发："><a href="#注解开发：" class="headerlink" title="注解开发："></a>注解开发：</h3><h4 id="1-注解实现自动装配："><a href="#1-注解实现自动装配：" class="headerlink" title="1. 注解实现自动装配："></a>1. 注解实现自动装配：</h4><p>在使用注解之前我们还需要在bean文件中加入注解驱动（在spring4之后使用注解开发要保证<strong>aop</strong>包导入了）：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">beans</span> <span class="attr">xmlns</span>=<span class="string">&quot;http://www.springframework.org/schema/beans&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">xmlns:xsi</span>=<span class="string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">xmlns:context</span>=<span class="string">&quot;http://www.springframework.org/schema/context&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">xsi:schemaLocation</span>=<span class="string">&quot;http://www.springframework.org/schema/beans</span></span></span><br><span class="line"><span class="tag"><span class="string">        https://www.springframework.org/schema/beans/spring-beans.xsd</span></span></span><br><span class="line"><span class="tag"><span class="string">        http://www.springframework.org/schema/context</span></span></span><br><span class="line"><span class="tag"><span class="string">        https://www.springframework.org/schema/context/spring-context.xsd&quot;</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 注解驱动 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">context:annotation-config</span>/&gt;</span></span><br><span class="line">    </span><br><span class="line">    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;cat&quot;</span> <span class="attr">class</span>=<span class="string">&quot;ruoxijun.pojo.Cat&quot;</span> <span class="attr">p:name</span>=<span class="string">&quot;猫&quot;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;dog&quot;</span> <span class="attr">class</span>=<span class="string">&quot;ruoxijun.pojo.Dog&quot;</span> <span class="attr">p:name</span>=<span class="string">&quot;狗&quot;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;people&quot;</span> <span class="attr">class</span>=<span class="string">&quot;ruoxijun.pojo.People&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;name&quot;</span> <span class="attr">value</span>=<span class="string">&quot;若惜君&quot;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">beans</span>&gt;</span></span><br></pre></td></tr></table></figure>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2020/11/13/blog/python/basis/#more" rel="contents">
+              <a class="btn" href="/2020/10/06/blog/java/ssm/spring/aop/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -475,7 +440,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://ruoxijun.github.io/2020/11/13/blog/java/thread/thread/">
+    <link itemprop="mainEntityOfPage" href="https://ruoxijun.github.io/2020/10/06/blog/java/ssm/spring/sm/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/img.jpg">
@@ -489,7 +454,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/11/13/blog/java/thread/thread/" class="post-title-link" itemprop="url">Thread</a>
+            <a href="/2020/10/06/blog/java/ssm/spring/sm/" class="post-title-link" itemprop="url">spring 与 mybatis 整合</a>
         </h2>
 
         <div class="post-meta">
@@ -498,17 +463,23 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-11-13 14:33:01 / 修改时间：14:53:12" itemprop="dateCreated datePublished" datetime="2020-11-13T14:33:01+08:00">2020-11-13</time>
+              <time title="创建时间：2020-10-06 15:34:06" itemprop="dateCreated datePublished" datetime="2020-10-06T15:34:06+08:00">2020-10-06</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-11-13 15:23:26" itemprop="dateModified" datetime="2020-11-13T15:23:26+08:00">2020-11-13</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java/" itemprop="url" rel="index"><span itemprop="name">java</span></a>
+                  <a href="/categories/ssm/" itemprop="url" rel="index"><span itemprop="name">ssm</span></a>
                 </span>
             </span>
 
@@ -523,16 +494,13 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="多线程"><a href="#多线程" class="headerlink" title="多线程"></a>多线程</h2><h3 id="知识储备："><a href="#知识储备：" class="headerlink" title="知识储备："></a>知识储备：</h3><ul>
-<li>java 中线程类主要依靠 <code>Runnable</code> 接口和 <code>Thread</code> 类。线程的启动主要依靠 <code>Thread</code> 的 <code>start</code>方法。</li>
-<li>线程中发生异常，只会停止异常线程。一般不会影响其它线程。</li>
-<li>线程存在编号从 0 开始。一个线程多次启动会报错，线程执行结束后也不能重启动。</li>
-<li>main 方法是主线程，也是一条线程不能忽视</li>
+          <h2 id="事务管理-SM整合-代码生成器"><a href="#事务管理-SM整合-代码生成器" class="headerlink" title="事务管理,SM整合,代码生成器"></a><center>事务管理,SM整合,代码生成器</center></h2><h3 id="事务控制："><a href="#事务控制：" class="headerlink" title="事务控制："></a>事务控制：</h3><p>Spring事务控制是基于AOP(切面编程)的，需要AOP所需要的包。</p>
+<h4 id="1-注解开启事务："><a href="#1-注解开启事务：" class="headerlink" title="1. 注解开启事务："></a>1. 注解开启事务：</h4><ul>
+<li>spring-service.xml中添加开启事务配置：</li>
 </ul>
-<h3 id="线程的创建与基础使用："><a href="#线程的创建与基础使用：" class="headerlink" title="线程的创建与基础使用："></a>线程的创建与基础使用：</h3><p>创建线程一般有两种方式：</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2020/11/13/blog/java/thread/thread/#more" rel="contents">
+              <a class="btn" href="/2020/10/06/blog/java/ssm/spring/sm/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -560,7 +528,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://ruoxijun.github.io/2020/11/13/blog/java/ssm/springMVC/index/">
+    <link itemprop="mainEntityOfPage" href="https://ruoxijun.github.io/2020/08/29/blog/java/ssm/ssm/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/img.jpg">
@@ -574,7 +542,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/11/13/blog/java/ssm/springMVC/index/" class="post-title-link" itemprop="url">spring mvc 基础</a>
+            <a href="/2020/08/29/blog/java/ssm/ssm/" class="post-title-link" itemprop="url">ssm 整合</a>
         </h2>
 
         <div class="post-meta">
@@ -583,10 +551,103 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-11-13 14:33:01 / 修改时间：14:53:01" itemprop="dateCreated datePublished" datetime="2020-11-13T14:33:01+08:00">2020-11-13</time>
+              <time title="创建时间：2020-08-29 16:31:14" itemprop="dateCreated datePublished" datetime="2020-08-29T16:31:14+08:00">2020-08-29</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-11-13 15:24:03" itemprop="dateModified" datetime="2020-11-13T15:24:03+08:00">2020-11-13</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/ssm/" itemprop="url" rel="index"><span itemprop="name">ssm</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="SSM-整合"><a href="#SSM-整合" class="headerlink" title="SSM 整合"></a><center>SSM 整合</center></h1><h3 id="依赖归纳与资源过滤："><a href="#依赖归纳与资源过滤：" class="headerlink" title="依赖归纳与资源过滤："></a>依赖归纳与资源过滤：</h3><h4 id="1-依赖：更新于：2020年8月29日16-56-27"><a href="#1-依赖：更新于：2020年8月29日16-56-27" class="headerlink" title="1.依赖：更新于：2020年8月29日16:56:27"></a>1.依赖：<em>更新于：2020年8月29日16:56:27</em></h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- Spring springmvc --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-webmvc<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>5.2.8.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- spring-jdbc --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-jdbc<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>5.2.8.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- spring aop切面编程 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.aspectj<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>aspectjweaver<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.9.6<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">scope</span>&gt;</span>runtime<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- Mybatis --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.mybatis<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mybatis<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>3.5.5<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- mybatis整合spring的适配包 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.mybatis<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mybatis-spring<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.0.5<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- 数据库驱动 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>mysql<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mysql-connector-java<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>8.0.21<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 数据库连接池 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.mchange<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>c3p0<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>0.9.5.5<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- servlet 与 jsp --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>javax.servlet<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>javax.servlet-api<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>4.0.1<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">scope</span>&gt;</span>provided<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>javax.servlet.jsp<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>javax.servlet.jsp-api<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.3.3<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">scope</span>&gt;</span>provided<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>jstl<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>jstl<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- 测试 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>junit<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>junit<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>4.13<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">scope</span>&gt;</span>test<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- lombok --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.projectlombok<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>lombok<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.18.12<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- jackson --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.fasterxml.jackson.core<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>jackson-databind<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.11.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="2-pom-xml中Maven资源过滤设置："><a href="#2-pom-xml中Maven资源过滤设置：" class="headerlink" title="2. pom.xml中Maven资源过滤设置："></a>2. pom.xml中Maven资源过滤设置：</h4>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/08/29/blog/java/ssm/ssm/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <div>
+    
+    </div>
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://ruoxijun.github.io/2020/08/19/blog/java/ssm/springMVC/index/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/img.jpg">
+      <meta itemprop="name" content="ruoxijun">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="若惜君">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/08/19/blog/java/ssm/springMVC/index/" class="post-title-link" itemprop="url">spring mvc 基础</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-08-19 21:03:09" itemprop="dateCreated datePublished" datetime="2020-08-19T21:03:09+08:00">2020-08-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-11-13 15:23:51" itemprop="dateModified" datetime="2020-11-13T15:23:51+08:00">2020-11-13</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -620,7 +681,7 @@
 <h3 id="Spring-MVC-简单实例："><a href="#Spring-MVC-简单实例：" class="headerlink" title="Spring MVC 简单实例："></a>Spring MVC 简单实例：</h3>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2020/11/13/blog/java/ssm/springMVC/index/#more" rel="contents">
+              <a class="btn" href="/2020/08/19/blog/java/ssm/springMVC/index/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -648,7 +709,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://ruoxijun.github.io/2020/11/13/blog/java/ssm/springMVC/date/">
+    <link itemprop="mainEntityOfPage" href="https://ruoxijun.github.io/2020/08/14/blog/java/ssm/spring/index/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/img.jpg">
@@ -662,7 +723,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/11/13/blog/java/ssm/springMVC/date/" class="post-title-link" itemprop="url">sprintmvc 数据处理</a>
+            <a href="/2020/08/14/blog/java/ssm/spring/index/" class="post-title-link" itemprop="url">spring 入门</a>
         </h2>
 
         <div class="post-meta">
@@ -671,173 +732,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-11-13 14:33:01 / 修改时间：14:52:57" itemprop="dateCreated datePublished" datetime="2020-11-13T14:33:01+08:00">2020-11-13</time>
+              <time title="创建时间：2020-08-14 08:55:10" itemprop="dateCreated datePublished" datetime="2020-08-14T08:55:10+08:00">2020-08-14</time>
             </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/ssm/" itemprop="url" rel="index"><span itemprop="name">ssm</span></a>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
                 </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="Json-拦截器-异常-文件-流程"><a href="#Json-拦截器-异常-文件-流程" class="headerlink" title="Json,拦截器,异常,文件,流程"></a><center>Json,拦截器,异常,文件,流程</center></h2><h3 id="JSON与数据传递："><a href="#JSON与数据传递：" class="headerlink" title="JSON与数据传递："></a>JSON与数据传递：</h3><h4 id="1-了解javascript对象与json字符串之间的转换："><a href="#1-了解javascript对象与json字符串之间的转换：" class="headerlink" title="1. 了解javascript对象与json字符串之间的转换："></a>1. 了解javascript对象与json字符串之间的转换：</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> o = &#123;<span class="attr">name</span>:<span class="string">&quot;test&quot;</span>,<span class="attr">age</span>:<span class="number">18</span>,<span class="attr">pass</span>:<span class="number">111</span>&#125;;</span><br><span class="line"><span class="comment">// stringify：对象转json字符串</span></span><br><span class="line"><span class="keyword">let</span> json = <span class="built_in">JSON</span>.stringify(o);</span><br><span class="line"><span class="built_in">console</span>.log(json); <span class="comment">// &#123;&quot;name&quot;:&quot;test&quot;,&quot;age&quot;:18,&quot;pass&quot;:111&#125;</span></span><br><span class="line"><span class="comment">// parse：json字符串转对象</span></span><br><span class="line"><span class="keyword">let</span> obj = <span class="built_in">JSON</span>.parse(json);</span><br><span class="line"><span class="built_in">console</span>.log(obj); <span class="comment">// &#123;name: &quot;test&quot;, age: 18, pass: 111&#125;</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="2-了解-Jackson："><a href="#2-了解-Jackson：" class="headerlink" title="2. 了解 Jackson："></a>2. 了解 Jackson：</h4>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/11/13/blog/java/ssm/springMVC/date/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <div>
-    
-    </div>
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://ruoxijun.github.io/2020/11/13/blog/java/ssm/spring/sm/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/img.jpg">
-      <meta itemprop="name" content="ruoxijun">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="若惜君">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/11/13/blog/java/ssm/spring/sm/" class="post-title-link" itemprop="url">spring 与 mybatis 整合</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-11-13 15:23:12" itemprop="dateModified" datetime="2020-11-13T15:23:12+08:00">2020-11-13</time>
               </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2020-11-13 14:33:01 / 修改时间：14:52:52" itemprop="dateCreated datePublished" datetime="2020-11-13T14:33:01+08:00">2020-11-13</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/ssm/" itemprop="url" rel="index"><span itemprop="name">ssm</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="事务管理-SM整合-代码生成器"><a href="#事务管理-SM整合-代码生成器" class="headerlink" title="事务管理,SM整合,代码生成器"></a><center>事务管理,SM整合,代码生成器</center></h2><h3 id="事务控制："><a href="#事务控制：" class="headerlink" title="事务控制："></a>事务控制：</h3><p>Spring事务控制是基于AOP(切面编程)的，需要AOP所需要的包。</p>
-<h4 id="1-注解开启事务："><a href="#1-注解开启事务：" class="headerlink" title="1. 注解开启事务："></a>1. 注解开启事务：</h4><ul>
-<li>spring-service.xml中添加开启事务配置：</li>
-</ul>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/11/13/blog/java/ssm/spring/sm/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <div>
-    
-    </div>
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://ruoxijun.github.io/2020/11/13/blog/java/ssm/spring/index/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/img.jpg">
-      <meta itemprop="name" content="ruoxijun">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="若惜君">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/11/13/blog/java/ssm/spring/index/" class="post-title-link" itemprop="url">spring 入门</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2020-11-13 14:33:01 / 修改时间：14:52:49" itemprop="dateCreated datePublished" datetime="2020-11-13T14:33:01+08:00">2020-11-13</time>
-            </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -868,7 +772,7 @@
 <h3 id="Spring组成："><a href="#Spring组成：" class="headerlink" title="Spring组成："></a>Spring组成：</h3><p>Spring 框架是一个分层架构，由 7 个定义良好的模块组成。</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2020/11/13/blog/java/ssm/spring/index/#more" rel="contents">
+              <a class="btn" href="/2020/08/14/blog/java/ssm/spring/index/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -896,7 +800,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://ruoxijun.github.io/2020/11/13/blog/java/ssm/spring/aop/">
+    <link itemprop="mainEntityOfPage" href="https://ruoxijun.github.io/2020/08/11/blog/java/ssm/mybatis/advanced/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/img.jpg">
@@ -910,7 +814,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/11/13/blog/java/ssm/spring/aop/" class="post-title-link" itemprop="url">spring 注解开发与 Aop</a>
+            <a href="/2020/08/11/blog/java/ssm/mybatis/advanced/" class="post-title-link" itemprop="url">mybatis 动态SQL</a>
         </h2>
 
         <div class="post-meta">
@@ -919,10 +823,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-11-13 14:33:01 / 修改时间：14:52:45" itemprop="dateCreated datePublished" datetime="2020-11-13T14:33:01+08:00">2020-11-13</time>
+              <time title="创建时间：2020-08-11 14:27:00" itemprop="dateCreated datePublished" datetime="2020-08-11T14:27:00+08:00">2020-08-11</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-11-13 15:22:20" itemprop="dateModified" datetime="2020-11-13T15:22:20+08:00">2020-11-13</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -944,11 +854,12 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="注解开发与Aop"><a href="#注解开发与Aop" class="headerlink" title="注解开发与Aop"></a><center>注解开发与Aop</center></h2><h3 id="注解开发："><a href="#注解开发：" class="headerlink" title="注解开发："></a>注解开发：</h3><h4 id="1-注解实现自动装配："><a href="#1-注解实现自动装配：" class="headerlink" title="1. 注解实现自动装配："></a>1. 注解实现自动装配：</h4><p>在使用注解之前我们还需要在bean文件中加入注解驱动（在spring4之后使用注解开发要保证<strong>aop</strong>包导入了）：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">beans</span> <span class="attr">xmlns</span>=<span class="string">&quot;http://www.springframework.org/schema/beans&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">xmlns:xsi</span>=<span class="string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">xmlns:context</span>=<span class="string">&quot;http://www.springframework.org/schema/context&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">xsi:schemaLocation</span>=<span class="string">&quot;http://www.springframework.org/schema/beans</span></span></span><br><span class="line"><span class="tag"><span class="string">        https://www.springframework.org/schema/beans/spring-beans.xsd</span></span></span><br><span class="line"><span class="tag"><span class="string">        http://www.springframework.org/schema/context</span></span></span><br><span class="line"><span class="tag"><span class="string">        https://www.springframework.org/schema/context/spring-context.xsd&quot;</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 注解驱动 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">context:annotation-config</span>/&gt;</span></span><br><span class="line">    </span><br><span class="line">    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;cat&quot;</span> <span class="attr">class</span>=<span class="string">&quot;ruoxijun.pojo.Cat&quot;</span> <span class="attr">p:name</span>=<span class="string">&quot;猫&quot;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;dog&quot;</span> <span class="attr">class</span>=<span class="string">&quot;ruoxijun.pojo.Dog&quot;</span> <span class="attr">p:name</span>=<span class="string">&quot;狗&quot;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;people&quot;</span> <span class="attr">class</span>=<span class="string">&quot;ruoxijun.pojo.People&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;name&quot;</span> <span class="attr">value</span>=<span class="string">&quot;若惜君&quot;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">beans</span>&gt;</span></span><br></pre></td></tr></table></figure>
+          <h2 id="注解，多表查询与动态SQL，缓存"><a href="#注解，多表查询与动态SQL，缓存" class="headerlink" title="注解，多表查询与动态SQL，缓存"></a><center>注解，多表查询与动态SQL，缓存</center></h2><h3 id="使用注解开发："><a href="#使用注解开发：" class="headerlink" title="使用注解开发："></a>使用注解开发：</h3><p>使用注解进行开发时要注意：注解来映射简单语句会使代码显得更加简洁，但复杂的操作，最好用 XML 来映射语句。</p>
+<p>使用注解的方法就不用创建Mapper.xml（可以创建），因此在<code>mybatis-config.xml</code>配置文件中注册映射器时建议使用<code>mapper</code>的<strong>class</strong>属性利用Mapper接口来注册映射器：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">mappers</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">mapper</span> <span class="attr">class</span>=<span class="string">&quot;io.github.ruoxijun.mapper.UserMapper&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">mappers</span>&gt;</span></span><br></pre></td></tr></table></figure>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2020/11/13/blog/java/ssm/spring/aop/#more" rel="contents">
+              <a class="btn" href="/2020/08/11/blog/java/ssm/mybatis/advanced/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -976,7 +887,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://ruoxijun.github.io/2020/11/13/blog/java/ssm/mybatis/index/">
+    <link itemprop="mainEntityOfPage" href="https://ruoxijun.github.io/2020/08/07/blog/java/ssm/mybatis/config/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/img.jpg">
@@ -990,7 +901,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/11/13/blog/java/ssm/mybatis/index/" class="post-title-link" itemprop="url">mybatis 基础入门</a>
+            <a href="/2020/08/07/blog/java/ssm/mybatis/config/" class="post-title-link" itemprop="url">mybatis 配置</a>
         </h2>
 
         <div class="post-meta">
@@ -999,10 +910,106 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-11-13 14:33:01 / 修改时间：14:52:39" itemprop="dateCreated datePublished" datetime="2020-11-13T14:33:01+08:00">2020-11-13</time>
+              <time title="创建时间：2020-08-07 16:44:33" itemprop="dateCreated datePublished" datetime="2020-08-07T16:44:33+08:00">2020-08-07</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-11-13 15:22:33" itemprop="dateModified" datetime="2020-11-13T15:22:33+08:00">2020-11-13</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/ssm/" itemprop="url" rel="index"><span itemprop="name">ssm</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="配置文件，日志，分页"><a href="#配置文件，日志，分页" class="headerlink" title="配置文件，日志，分页"></a><center>配置文件，日志，分页</center></h2><h3 id="核心配置文件解析与优化："><a href="#核心配置文件解析与优化：" class="headerlink" title="核心配置文件解析与优化："></a>核心配置文件解析与优化：</h3><p>详情请看：<a target="_blank" rel="noopener" href="https://mybatis.org/mybatis-3/zh/configuration.html#typeAliases">官方配置文档</a></p>
+<blockquote>
+<p>注意官方规定<code>mybatis-config.xml</code>文件中<code>configuration</code>标签中的配置标签必须遵循如下顺序：</p>
+<p><code>properties</code> → <code>settings</code> → <code>typeAliases</code> → <code>typeHandlers</code> → <code>objectFactory</code> → <code>objectWrapperFactory</code> → <code>reflectorFactory</code> → <code>plugins</code> → <code>environments</code> → <code>databaseIdProvider</code> → <code>mappers</code></p>
+</blockquote>
+<h4 id="1-环境配置（environments）："><a href="#1-环境配置（environments）：" class="headerlink" title="1. 环境配置（environments）："></a>1. 环境配置（environments）：</h4>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/08/07/blog/java/ssm/mybatis/config/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <div>
+    
+    </div>
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://ruoxijun.github.io/2020/07/17/blog/java/ssm/mybatis/index/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/img.jpg">
+      <meta itemprop="name" content="ruoxijun">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="若惜君">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/07/17/blog/java/ssm/mybatis/index/" class="post-title-link" itemprop="url">mybatis 基础入门</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-07-17 16:14:54" itemprop="dateCreated datePublished" datetime="2020-07-17T16:14:54+08:00">2020-07-17</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-11-13 15:22:47" itemprop="dateModified" datetime="2020-11-13T15:22:47+08:00">2020-11-13</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -1032,7 +1039,7 @@
 <h4 id="1-创建maven程序，添加依赖-jar-包-："><a href="#1-创建maven程序，添加依赖-jar-包-：" class="headerlink" title="1. 创建maven程序，添加依赖 (jar 包)："></a>1. 创建maven程序，添加依赖 (jar 包)：</h4><p>在 maven 项目文件 <code>pom.xml</code> 下的 <code>dependencies</code> 标签中导入一下依赖(jar包)：</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2020/11/13/blog/java/ssm/mybatis/index/#more" rel="contents">
+              <a class="btn" href="/2020/07/17/blog/java/ssm/mybatis/index/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
