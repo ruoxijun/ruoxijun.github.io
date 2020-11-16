@@ -188,96 +188,6 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://ruoxijun.github.io/2020/07/06/blog/android/data/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/img.jpg">
-      <meta itemprop="name" content="ruoxijun">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="若惜君">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/07/06/blog/android/data/" class="post-title-link" itemprop="url">Android 数据存储</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-07-06 20:01:47" itemprop="dateCreated datePublished" datetime="2020-07-06T20:01:47+08:00">2020-07-06</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-11-13 15:16:54" itemprop="dateModified" datetime="2020-11-13T15:16:54+08:00">2020-11-13</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/android/" itemprop="url" rel="index"><span itemprop="name">android</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="Android-数据存储"><a href="#Android-数据存储" class="headerlink" title="Android 数据存储"></a><center>Android 数据存储<center></center></center></h2><blockquote>
-<h3 id="SharedPreferences-轻量级存储："><a href="#SharedPreferences-轻量级存储：" class="headerlink" title="SharedPreferences 轻量级存储："></a>SharedPreferences 轻量级存储：</h3></blockquote>
-<p>SharedPreferences是存储共享变量的接口，文件路径位于“/data/data/应用程序包/shared_prefs”目录下的xml文件。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 获取共享文件对象，参1为文件名不存在则创建，参2为操作文件的模式推荐使用：&#x27;MODE_PRIVATE&#x27;</span></span><br><span class="line">SharedPreferences sp=getSharedPreferences(<span class="string">&quot;data&quot;</span>,MODE_PRIVATE);</span><br><span class="line"><span class="comment">// 查看某key数据是否存在</span></span><br><span class="line">sp.contains(<span class="string">&quot;key&quot;</span>);</span><br><span class="line"><span class="comment">// 根据key获取value，参2为key不存在时返回的默认值</span></span><br><span class="line">sp.getString(<span class="string">&quot;key&quot;</span>,<span class="string">&quot;defaultValue&quot;</span>);</span><br></pre></td></tr></table></figure>
-
-<p>Editor接口为SharedPreferences接口的内部接口，专编辑共享数据。通过共享对象的 <code>edit()</code> 获取到该对象。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/07/06/blog/android/data/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <div>
-    
-    </div>
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://ruoxijun.github.io/2020/07/06/blog/interest/sql/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1182,6 +1092,102 @@
   
   
 
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://ruoxijun.github.io/2020/06/02/blog/java/collection/map/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/img.jpg">
+      <meta itemprop="name" content="ruoxijun">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="若惜君">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/06/02/blog/java/collection/map/" class="post-title-link" itemprop="url">Map 集合</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-06-02 14:07:41" itemprop="dateCreated datePublished" datetime="2020-06-02T14:07:41+08:00">2020-06-02</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-11-13 15:20:06" itemprop="dateModified" datetime="2020-11-13T15:20:06+08:00">2020-11-13</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index"><span itemprop="name">java</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="Map-集合"><a href="#Map-集合" class="headerlink" title="Map 集合"></a>Map 集合</h3><h4 id="Map-已实现类与特性："><a href="#Map-已实现类与特性：" class="headerlink" title="Map 已实现类与特性："></a>Map 已实现类与特性：</h4><ul>
+<li>Hashtable:哈希表结构，且不允许 null 作为键和值，同步(不建议使用)，键唯一性靠 hashCode()和 equals()(在键对象的类中重写方法，可保证键唯一性)<ul>
+<li>Properties(Hashtable 子类):属性集，<strong><em>键与值都是字符串</em></strong>(没有泛型)，都以 object 存储在其中(自身提供了不用强转的方法)，且可以结合 <strong><em>流</em></strong> 进行键值操作</li>
+</ul>
+</li>
+<li>HashMap: :哈希表结构，且允许<strong>null 作为键和值</strong>，不同步<ul>
+<li>LinkedHashMap：HashMap 的子类，元素顺序为存入顺序(有序)</li>
+</ul>
+</li>
+<li>TreeMap:二叉树结构，会对元素根据键排序(排序方法参照 TreeSet)，不同步</li>
+</ul>
+<h4 id="Map-常用方法："><a href="#Map-常用方法：" class="headerlink" title="Map 常用方法："></a>Map 常用方法：</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">Map map = <span class="keyword">new</span> HashMap();</span><br><span class="line">map.clear();<span class="comment">//清空元素</span></span><br><span class="line">map.size();<span class="comment">//获取元素个数</span></span><br><span class="line">map.containsKey(<span class="string">&quot;obj&quot;</span>);<span class="comment">//是否包含某键</span></span><br><span class="line">map.containsValue(<span class="string">&quot;obj&quot;</span>);<span class="comment">//是否包含某值</span></span><br><span class="line">map.isEmpty();<span class="comment">//集合是否为空</span></span><br><span class="line"></span><br><span class="line">map.get(<span class="string">&quot;key&quot;</span>);<span class="comment">//根据键拿值</span></span><br><span class="line">map.put(<span class="string">&quot;key&quot;</span>, <span class="string">&quot;value&quot;</span>);<span class="comment">//添加元素</span></span><br><span class="line"><span class="comment">//键要保持唯一,添加同一键时会覆盖之前的值,且返回之前的值</span></span><br><span class="line">map.put(<span class="string">&quot;key&quot;</span>, <span class="string">&quot;value2&quot;</span>);<span class="comment">//修改key的值</span></span><br><span class="line">map.putAll(map);<span class="comment">//将一个Map中的所有内容添加到此map中</span></span><br><span class="line">map.remove(<span class="string">&quot;key&quot;</span>);<span class="comment">//根据键移除指定元素,返回删除的值</span></span><br><span class="line">map.remove(<span class="string">&quot;key&quot;</span>, <span class="string">&quot;value&quot;</span>);<span class="comment">//根据键与值移除指定元素(必须完全相同),返回Boolean</span></span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/06/02/blog/java/collection/map/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <div>
+    
+    </div>
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
 
   
   <nav class="pagination">
@@ -1253,14 +1259,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">35</span>
+          <span class="site-state-item-count">34</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
