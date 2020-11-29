@@ -2308,8 +2308,8 @@
         <category>HTML</category>
       </categories>
       <tags>
-        <tag>jQuery</tag>
         <tag>ajax</tag>
+        <tag>jQuery</tag>
         <tag>javascript</tag>
       </tags>
   </entry>
@@ -2573,8 +2573,8 @@
         <category>HTML</category>
       </categories>
       <tags>
-        <tag>ajax</tag>
         <tag>HTML</tag>
+        <tag>ajax</tag>
         <tag>axios</tag>
       </tags>
   </entry>
