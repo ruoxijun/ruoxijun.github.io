@@ -1220,7 +1220,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #ff1b45;
+  background: #00ff18;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -1561,6 +1561,16 @@ pre .javascript .function {
     left: 20px;
     opacity: 0.8;
   }
+}
+.reading-progress-bar {
+  background: #ffc0cb;
+  display: block;
+  height: 3px;
+  left: 0;
+  position: fixed;
+  width: 0;
+  z-index: 1500;
+  top: 0;
 }
 .post {
   margin-top: 10px;
@@ -2744,6 +2754,7 @@ body {
 .sidebar {
 /* 侧边框的透明度设置 */
   opacity: 0.9;
+  border-radius: 10px;
 }
 .header-inner {
 /* 菜单栏的透明度设置 */
@@ -2886,7 +2897,76 @@ div.post-block.tag .collection-title h2 {
   display: flex;
 }
 /* 归档页样式 end */
+/* 更好的侧边滚动条 */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-button {
+  width: 0;
+  height: 0;
+}
+::-webkit-scrollbar-button:start:increment,
+::-webkit-scrollbar-button:end:decrement {
+  display: none;
+}
+::-webkit-scrollbar-corner {
+  display: block;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  background-color: #00fdf1;
+}
+::-webkit-scrollbar-thumb:hover {
+  border-radius: 8px;
+  background-color: rgba(253,57,57,0.562);
+}
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-thumb {
+  border-right: 1px solid transparent;
+  border-left: 1px solid transparent;
+}
+::-webkit-scrollbar-track:hover {
+  background-color: rgba(0,0,0,0.2);
+}
 /* 自定义 */
+.site-description {
+  color: #f14b4b;
+}
+.tag-cloud-tags a:hover {
+  border-radius: 10px;
+}
+.category-list-link:hover + .category-list-count {
+  display: none;
+}
+.category-list-link:hover {
+  padding: 0px 20px;
+}
+.sidebar-nav {
+  font-weight: bold;
+  background: linear-gradient(to right, #eea2a2 0, #bbc1bf 19%, #57c6e1 42%, #b49fda 79%, #7ac5d8 100%);
+  padding-top: 8px;
+  padding-bottom: 8px;
+  border-radius: 10px 10px 0px 0px;
+  margin-bottom: 10px;
+}
+.post-toc .nav .active-current > a {
+  color: #44d7b6;
+  border-left: 2px solid #44d7b6;
+  text-decoration: none;
+  padding-left: 20px;
+}
+.sidebar-nav .sidebar-nav-active {
+  border-bottom-color: #795548;
+  border-width: 3px;
+  color: #fff;
+}
+.post-toc .nav {
+  padding: 0px 3px;
+}
+a.nav-link {
+  border-bottom: 0px;
+}
 .site-brand-container {
   background: url("https://source.unsplash.com/random/240x75");
   background-repeat: no-repeat;
@@ -2896,10 +2976,13 @@ div.post-block.tag .collection-title h2 {
   background: rgba(33,150,243,0);
   height: 3px;
 }
+.menu-item-active a {
+  color: #fc6423;
+}
 .menu .menu-item :hover {
   display: block;
   margin: 0;
-  color: #ff9100;
+  color: #44d7b6;
   border-bottom: 1px solid #e100ff;
 }
 .header-inner {
@@ -2913,6 +2996,7 @@ div.post-block.tag .collection-title h2 {
   color: var(--text-color);
   width: 240px;
   opacity: 0;
+  padding: 0px;
 }
 .post-block + .post-block {
   border-radius: 10px;
