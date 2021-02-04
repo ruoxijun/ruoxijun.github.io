@@ -1220,7 +1220,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #ffa328;
+  background: #05cfe4;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2744,6 +2744,7 @@ ul.breadcrumb li + li:last-child {
 body {
 /*设置背景 */
   background: url("https://source.unsplash.com/random/1600x900");
+/* background: url("https://w.wallhaven.cc/full/z8/wallhaven-z8mq8y.jpg"); */
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: 50% 50%;
